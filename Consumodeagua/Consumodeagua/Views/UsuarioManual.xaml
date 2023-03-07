@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Consumodeagua.Views.UsuarioManual"
+             xmlns:vm="clr-namespace:Consumodeagua.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="#183592"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#1181e3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout>
+                <StackLayout Margin="0,30,0,0">
+                    <Image Margin="-210,0,10,0" Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="80" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                    <Image Margin="10,-80,-100,0" Grid.Column="3"  Source="https://i.ibb.co/LzTYFcC/16363.png"  HeightRequest="55" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                    <StackLayout Margin="0,-59,20,50">
+                        <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Margin="160,30,0,0" Text="Manual" TextColor="White" FontSize="21"></Label>
+                <Label Margin="30,30,30,0" Text="En este manual se mostrara como se utiliza y funciona esta aplicacion y sus sensores tambien se mostrara una simulacion de esto en una imagen. " TextColor="White" FontSize="21"></Label>
+                <Label Margin="30,30,30,0" Text="En este manual se mostrara como se utiliza y funciona esta aplicacion y sus sensores tambien se mostrara una simulacion de esto en una imagen. " TextColor="White" FontSize="21"></Label>
+                <Label Margin="30,30,30,0" Text="En este manual se mostrara como se utiliza y funciona esta aplicacion y sus sensores tambien se mostrara una simulacion de esto en una imagen. " TextColor="White" FontSize="21"></Label>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

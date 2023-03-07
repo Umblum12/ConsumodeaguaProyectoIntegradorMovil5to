@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "pFRWg5cQh2u83G4a13+pfUE6pJqPaBLgAzXFZwutLkgzdfyXlP0Dffiw0VIMDImzjdhCz/DE0RLawpIO7oJKnQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CD15\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.essentials\\1.7.5\\xamarin.essentials.1.7.5.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2196\\xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

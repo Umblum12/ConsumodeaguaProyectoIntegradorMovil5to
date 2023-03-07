@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "VRMtkzmCtoEaGbAt+FeDFgG1gjvSJB2E45IqBDSFx7E7YvJbog0/WRwHdVp8vR6DXlBYFw96b6VNX4AEgZoCPw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CD15\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2196\\xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Degradación del paquete detectada: Xamarin.Essentials de 1.7.5 a 1.7.0. Haga referencia al paquete directamente desde el proyecto para seleccionar una versión diferente. \r\n Consumodeagua.iOS -> Consumodeagua -> Xamarin.Essentials (>= 1.7.5) \r\n Consumodeagua.iOS -> Xamarin.Essentials (>= 1.7.0)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
+}

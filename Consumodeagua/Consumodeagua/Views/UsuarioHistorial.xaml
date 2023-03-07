@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Consumodeagua.Views.UsuarioHistorial"
+             xmlns:vm="clr-namespace:Consumodeagua.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="#183592"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#1181e3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout Margin="0,30,0,0">
+                <Image Margin="-210,0,10,0" Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="80" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                <Image Margin="10,-80,-100,0" Grid.Column="3"  Source="https://i.ibb.co/LzTYFcC/16363.png"  HeightRequest="55" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                <StackLayout Margin="0,-59,20,50">
+                    <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <ScrollView Margin="30,0,30,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Always">
+                <StackLayout>
+                    <Frame Margin="30,30,30,0" HeightRequest="60" BackgroundColor="red" BorderColor="Black" Padding="0">
+                        <Grid Padding="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="4.7*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontAttributes="Bold" Text="IdUsuario" VerticalOptions="Center" Grid.Column="0"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontAttributes="Bold" Text="IdHistorial" VerticalOptions="Center" Grid.Column="1"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontAttributes="Bold" Text="Nombre" VerticalOptions="Center" Grid.Column="2"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontAttributes="Bold" Text="Fecha" VerticalOptions="Center" Grid.Column="3"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontAttributes="Bold" Text="Flujo" VerticalOptions="Center" Grid.Column="4"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontAttributes="Bold" Text="Estado" VerticalOptions="Center" Grid.Column="5"/>
+
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Margin="30,-10,30,0" HeightRequest="60" BackgroundColor="White" BorderColor="Black" Padding="0">
+                        <Grid Padding="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="4.7*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="1" VerticalOptions="Center" Grid.Column="0"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="1" VerticalOptions="Center" Grid.Column="1"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="Abelardo" VerticalOptions="Center" Grid.Column="2"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="/02/28/2023" VerticalOptions="Center" Grid.Column="3"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="381" VerticalOptions="Center" Grid.Column="4"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="Abiero" VerticalOptions="Center" Grid.Column="5"/>
+
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Margin="30,-10,30,0" HeightRequest="60" BackgroundColor="White" BorderColor="Black" Padding="0">
+                        <Grid Padding="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="4.7*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Margin="10,0,10,0" TextColor="Black" FontFamily="bold" Text="2" VerticalOptions="Center" Grid.Column="0"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="2" VerticalOptions="Center" Grid.Column="1"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="Eduardo" VerticalOptions="Center" Grid.Column="2"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="/02/28/2023" VerticalOptions="Center" Grid.Column="3"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="0" VerticalOptions="Center" Grid.Column="4"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="Cerrado" VerticalOptions="Center" Grid.Column="5"/>
+
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Margin="30,-10,30,0" HeightRequest="60" BackgroundColor="White" BorderColor="Black" Padding="0">
+                        <Grid Padding="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="4.7*"/>
+                                <ColumnDefinition Width="4.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="3" VerticalOptions="Center" Grid.Column="0"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="3" VerticalOptions="Center" Grid.Column="1"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="Dorys" VerticalOptions="Center" Grid.Column="2"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="/02/28/2023" VerticalOptions="Center" Grid.Column="3"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="127" VerticalOptions="Center" Grid.Column="4"/>
+                            <Label Margin="10,0,10,0" TextColor="Black" Text="Abiero" VerticalOptions="Center" Grid.Column="5"/>
+
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+
+            <ListView  SeparatorVisibility="None" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0">
+                                <Grid Padding="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4.5*"/>
+                                        <ColumnDefinition Width="4.7*"/>
+                                        <ColumnDefinition Width="4.5*"/>
+                                        <ColumnDefinition Width="3.5*"/>
+                                        <ColumnDefinition Width="3.5*"/>
+                                        <ColumnDefinition Width="3.5*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Margin="10,0,10,0" TextColor="Black" Text="IdUsuario" VerticalOptions="Center" Grid.Column="0"/>
+                                    <Label Margin="10,0,10,0" TextColor="Black" Text="IdHistorial" VerticalOptions="Center" Grid.Column="1"/>
+                                    <Label Margin="10,0,10,0" TextColor="Black" Text="Nombre" VerticalOptions="Center" Grid.Column="2"/>
+                                    <Label Margin="10,0,10,0" TextColor="Black" Text="Fecha" VerticalOptions="Center" Grid.Column="3"/>
+
+                                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

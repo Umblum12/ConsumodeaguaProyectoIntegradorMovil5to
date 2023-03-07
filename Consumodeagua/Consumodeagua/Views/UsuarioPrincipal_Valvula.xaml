@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Consumodeagua.Views.UsuarioPrincipal_Valvula"
+             xmlns:vm="clr-namespace:Consumodeagua.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="#183592"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#1181e3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <StackLayout Margin="0,30,0,-10">
+                <Image Margin="-210,0,10,0" Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="80" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                <Image Margin="10,-80,-100,0" Grid.Column="3"  Source="https://i.ibb.co/LzTYFcC/16363.png"  HeightRequest="55" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                <StackLayout Margin="0,-59,20,50">
+                    <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="0,0,0,50">
+                <Grid>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="6" Text="VÁLVULA ELÉCTRICA" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="24"></Label>
+                </Grid>
+            </StackLayout>
+
+            <Image HeightRequest="135" Source="{Binding ImgValvula}"></Image>
+
+            <StackLayout Margin="90,50,90,30">
+                <Grid>
+                    <Label Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Text="Estado:" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="24"></Label>
+                    <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3" Text="{Binding btn_AbrirCerrarTXT}" TextColor="{Binding btn_AbrirCerrarColor}" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="24">
+                    </Label>
+                    <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6" Grid.RowSpan="3" CornerRadius="40" Text="Abrir/Cerrar" FontAttributes="Bold" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding btn_Abrir_Cerrarcomand}"></Button>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"></Label>
+                    <Label Grid.Row="0" Grid.Column="0" ></Label>
+
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

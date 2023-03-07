@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Consumodeagua.Views.Perfil"
+             xmlns:vm="clr-namespace:Consumodeagua.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="#183592"
+             >
+    
+    <ContentPage.BindingContext>
+        <vm:PerfilViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#1181e3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+
+        <StackLayout Margin="0,30,0,0">
+            <Image Margin="-210,0,10,0" Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="80" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+            <Image Margin="10,-80,-100,0" Grid.Column="3"  Source="https://i.ibb.co/LzTYFcC/16363.png"  HeightRequest="55" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout Margin="0,-59,20,50">
+                <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout>
+            <Grid>
+                <Image HeightRequest="100" Source="https://imgbb.su/images/2023/03/01/Icono_Perfilf029627add8f51a0.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>
+
+        <Frame Margin="30,20,30,20" BackgroundColor="#1181e3">
+            <StackLayout Margin="50,10,50,10">
+                <Label TextColor="White" Text="Nombre: " FontAttributes="Bold"></Label>
+                <Entry Text="Eduardo" FontAttributes="Bold" IsReadOnly="True"></Entry>
+                <Label TextColor="White" Text="Apellido Paterno: " FontAttributes="Bold"></Label>
+                <Entry  Text="Franco" FontAttributes="Bold" IsReadOnly="True"></Entry>
+                <Label TextColor="White" Text="Apellido Materno: " FontAttributes="Bold"></Label>
+                <Entry  Text="Angulo" FontAttributes="Bold" IsReadOnly="True"></Entry>
+                <Label TextColor="White" Text="Correo: " FontAttributes="Bold"></Label>
+                <Entry  Text="Eduardo@gmail.com" FontAttributes="Bold" IsReadOnly="True"></Entry>
+                <Label TextColor="White" Text="Direccion: " FontAttributes="Bold"></Label>
+                <Entry Text="Pueblo Yaqui" FontAttributes="Bold" IsReadOnly="True"></Entry>
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Margin="0,59,20,50">
+            <Button CornerRadius="20" Text="Cerrar sesión" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#183592" FontAttributes="Bold" FontSize="15" Command="{Binding Cerrarsesioncomand}"></Button>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

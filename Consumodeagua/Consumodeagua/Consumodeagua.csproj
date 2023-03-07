@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />  
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2196" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Perfil.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Perfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UsuarioHistorial.xaml.cs">
+      <DependentUpon>UsuarioHistorial.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UsuarioManual.xaml.cs">
+      <DependentUpon>UsuarioManual.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UsuarioPrincipal_Valvula.xaml.cs">
+      <DependentUpon>UsuarioPrincipal_Valvula.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UsuarioPrincipal_SensordeFlujo.xaml.cs">
+      <DependentUpon>UsuarioPrincipal_SensordeFlujo.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Perfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\UsuarioPrincipal_SensordeFlujo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
