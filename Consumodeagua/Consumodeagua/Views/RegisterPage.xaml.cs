@@ -11,7 +11,7 @@ namespace Consumodeagua.Views
         public RegisterPage()
         {
             InitializeComponent();
-            this.BindingContext = new RegisterViewModel();
+            BindingContext = new RegisterViewModel(Navigation);
 
         }
     }

@@ -33,21 +33,21 @@
         <Label Text="Registrarse" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="24"></Label>
         <StackLayout Margin="10,-30,40,0">
             <Grid>
-                <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Nombre" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Apellido Paterno" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Apellido Materno" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                <Entry Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Direccion" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                <Entry Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Correo Electronico" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                <DatePicker Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="10" MinimumDate="01/01/1923" MaximumDate="12/31/2023"></DatePicker>
-                <Entry Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
-                <Entry Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Confimar Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
+                <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Nombre" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" TextTransform="Lowercase" Text="{Binding TxtNombre}" ></Entry>
+                <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Apellido Paterno" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" TextTransform="Lowercase" Text="{Binding TxtApellidoPaterno}" ></Entry>
+                <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Apellido Materno" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" TextTransform="Lowercase" Text="{Binding TxtApellidoMaterno}" ></Entry>
+                <Entry Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Direccion" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" TextTransform="Lowercase" Text="{Binding TxtDireccion}" ></Entry>
+                <Entry Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Correo Electronico" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" TextTransform="Lowercase" Text="{Binding TxtCorreoElectronico}" ></Entry>
+                <DatePicker Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="10" MinimumDate="01/01/1923" MaximumDate="12/31/2023" Date="{Binding DatFechaNacimiento}"></DatePicker>
+                <Entry Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True" TextTransform="Lowercase" Text="{Binding TxtContrasena}" ></Entry>
+                <Entry Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Confimar Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True" TextTransform="Lowercase" Text="{Binding TxtConfirmarContrasena}" ></Entry>
             </Grid>
         </StackLayout>
 
         <StackLayout Margin="0,30,0,30">
             <Grid>
                 <Label Grid.Row="0" Grid.Column="3" TextColor="Black"></Label>
-                <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="40"  Text="CREAR CUENTA" FontAttributes="Bold"  TextColor="Black" BackgroundColor="#1181e3"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="40"  Text="CREAR CUENTA" FontAttributes="Bold"  TextColor="Black" BackgroundColor="#1181e3" Command="{Binding InsertarUsuCommand}"></Button>
             </Grid>
         </StackLayout>
     </StackLayout>

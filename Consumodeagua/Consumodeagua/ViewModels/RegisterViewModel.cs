@@ -1,4 +1,6 @@
-﻿using Consumodeagua.Views;
+﻿using Consumodeagua.Data;
+using Consumodeagua.Models;
+using Consumodeagua.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,22 +12,20 @@ namespace Consumodeagua.ViewModels
 {
     public class RegisterViewModel : BaseViewModel
     {
-
-        public Command VolverLoginCommand { get; }
-
         public RegisterViewModel()
         {
-            VolverLoginCommand = new Command(OnLoginClicked);
-        }
-
-        private async void OnLoginClicked(object obj)
-        {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            
         }
 
         #region VARIABLES
-        string _Texto;
+        string _TxtNombre;
+        string _TxtApellidoPaterno;
+        string _TxtApellidoMaterno;
+        string _TxtDireccion;
+        string _TxtCorreoElectronico;
+        DateTime _DatFechaNacimiento;
+        string _TxtContrasena;
+        string _TxtConfirmarContrasena;
         #endregion
         #region CONSTRUCTOR
         public RegisterViewModel(INavigation navigation)
@@ -34,25 +34,72 @@ namespace Consumodeagua.ViewModels
         }
         #endregion
         #region OBJETOS
-        public string Texto
+        public string TxtNombre
         {
-            get { return _Texto; }
-            set { SetProperty(ref _Texto, value); }
+            get { return _TxtNombre; }
+            set { SetProperty(ref _TxtNombre, value); }
+        }
+        public string TxtApellidoPaterno
+        {
+            get { return _TxtApellidoPaterno; }
+            set { SetProperty(ref _TxtApellidoPaterno, value); }
+        }
+        public string TxtApellidoMaterno
+        {
+            get { return _TxtApellidoMaterno; }
+            set { SetProperty(ref _TxtApellidoMaterno, value); }
+        }
+        public string TxtDireccion
+        {
+            get { return _TxtDireccion; }
+            set { SetProperty(ref _TxtDireccion, value); }
+        }
+        public string TxtCorreoElectronico
+        {
+            get { return _TxtCorreoElectronico; }
+            set { SetProperty(ref _TxtCorreoElectronico, value); }
+        }
+        public DateTime DatFechaNacimiento
+        {
+            get { return _DatFechaNacimiento; }
+            set { SetProperty(ref _DatFechaNacimiento, value); }
+        }
+        public string TxtContrasena
+        {
+            get { return _TxtContrasena; }
+            set { SetProperty(ref _TxtContrasena, value); }
+        }
+        public string TxtConfirmarContrasena
+        {
+            get { return _TxtConfirmarContrasena; }
+            set { SetProperty(ref _TxtConfirmarContrasena, value); }
         }
         #endregion
         #region PROCESOS
-        private async Task Login()
+        public async Task InsertarUsu()
         {
+            var funcion = new DUsuario();
+            var parametros = new MUsuario();
 
+            parametros.Nombre = TxtNombre;
+            parametros.ApellidoPaterno = TxtApellidoPaterno;
+            parametros.ApellidoMaterno = TxtApellidoMaterno;
+            parametros.Direccion = TxtDireccion;
+            parametros.CorreoElectronico = TxtCorreoElectronico;
+            parametros.FechaNacimiento = DatFechaNacimiento;
+            parametros.Contrasena = TxtContrasena;
+
+            await funcion.InsertarUsuario(parametros);
         }
-        public async Task Volver()
+        private async Task OnVolverLoginClicked()
         {
-
+            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+            await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
         #endregion
         #region COMANDOS
-        public ICommand Logincomand => new Command(async () => await Login());
-        public ICommand Volvercomand => new Command(async () => await Volver());
+        public ICommand VolverLoginCommand => new Command(async () => await OnVolverLoginClicked());
+        public ICommand InsertarUsuCommand => new Command(async () => await InsertarUsu());
         #endregion
 
     }

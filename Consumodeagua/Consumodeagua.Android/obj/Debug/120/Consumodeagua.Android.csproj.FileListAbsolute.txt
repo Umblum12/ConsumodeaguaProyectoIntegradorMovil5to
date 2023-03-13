@@ -1994,3 +1994,8 @@ C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Deb
 C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\res\drawable\icono_flecha_atras.png
+C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\android\assets\Firebase.dll
+C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\android\assets\LiteDB.dll
+C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll
+C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\android\assets\System.Reactive.dll
+C:\Users\abela\Desktop\Consumodeagua\Consumodeagua\Consumodeagua.Android\obj\Debug\120\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll
