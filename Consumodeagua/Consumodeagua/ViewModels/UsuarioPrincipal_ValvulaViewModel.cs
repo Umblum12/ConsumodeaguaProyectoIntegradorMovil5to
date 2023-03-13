@@ -11,17 +11,17 @@ namespace Consumodeagua.ViewModels
     {
         public UsuarioPrincipal_ValvulaViewModel()
         {
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
-        public ICommand OpenWebCommand { get; }
 
         #region VARIABLES
     string _Texto;
         string _ImgValvula;
         bool _btnEnableValv;
         bool _bnt_click;
+        bool _estado;
         string _btn_AbrirCerrarColor;
         string _btn_AbrirCerrarTXT;
+        UsuarioHistorialViewModel UHVM = new UsuarioHistorialViewModel();
         #endregion
         #region CONSTRUCTOR
         public UsuarioPrincipal_ValvulaViewModel(INavigation navigation)
@@ -65,6 +65,11 @@ namespace Consumodeagua.ViewModels
             get { return _btn_AbrirCerrarTXT; }
             set { SetProperty(ref _btn_AbrirCerrarTXT, value); }
         }
+        public bool estado
+        {
+            get { return _estado; }
+            set { SetProperty(ref _estado, value); }
+        }
         #endregion
         #region PROCESOS
         public void btn_Abrir_Cerrar()
@@ -82,6 +87,17 @@ namespace Consumodeagua.ViewModels
                 ImgValvula = "https://i.ibb.co/1RG6MSS/Icono-Valvula-Agua.png";
                 btn_AbrirCerrarColor = "Green";
                 btn_AbrirCerrarTXT = "Abierto";
+            }
+        }
+        public bool Estado()
+        {
+            if (bnt_click == true)
+            {
+               return estado = true;
+            }
+            else
+            {
+                return estado = false;
             }
         }
         private async Task OnPerfilClicked()

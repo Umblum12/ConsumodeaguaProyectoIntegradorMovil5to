@@ -11,10 +11,7 @@ namespace Consumodeagua.ViewModels
     {
         public UsuarioManualViewModel()
         {
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
-
-        public ICommand OpenWebCommand { get; }
 
         #region VARIABLES
         string _Texto;
@@ -39,14 +36,9 @@ namespace Consumodeagua.ViewModels
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(Perfil)}");
         }
-        public async Task Volver()
-        {
-            
-        }
         #endregion
         #region COMANDOS
         public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
-        public ICommand Volvercomand => new Command(async () => await Volver());
         #endregion
 
     }

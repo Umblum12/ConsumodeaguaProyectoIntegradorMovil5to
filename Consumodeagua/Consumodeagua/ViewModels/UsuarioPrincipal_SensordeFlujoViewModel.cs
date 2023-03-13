@@ -11,8 +11,6 @@ namespace Consumodeagua.ViewModels
     {
         public UsuarioPrincipal_SensordeFlujoViewModel()
         {
-            
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 
         #region VARIABLES
@@ -22,8 +20,6 @@ namespace Consumodeagua.ViewModels
         bool _bnt_click;
         int _N1;
         string _ImgSFA;
-        public ICommand OpenWebCommand { get; }
-
         #endregion
         #region CONSTRUCTOR
         public UsuarioPrincipal_SensordeFlujoViewModel(INavigation navigation)

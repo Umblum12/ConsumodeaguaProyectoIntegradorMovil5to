@@ -23,12 +23,28 @@
                     <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
                 </StackLayout>
             </StackLayout>
-
+            <Button Text="hola" Command="{Binding InsertarHistocomand}"></Button>
+            <StackLayout>
+                <Button Text="hola" Command="{Binding InsertarHistocomand}"></Button>
+            </StackLayout>
             <Grid RowDefinitions="60,*">
-
                 <Label Text="Historial" HorizontalOptions="Center" VerticalOptions="Center" FontSize="28" FontAttributes="Bold" TextColor="Black">
                 </Label>
-                <CollectionView BackgroundColor="#383592">
+                <CollectionView BackgroundColor="#383592" ItemsSource="{Binding ListaHistorial}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="100,*" Margin="0,10,0,0">
+                                <Frame Grid.Row="1" WidthRequest="250" HorizontalOptions="Center" CornerRadius="15" Margin="0,-38,0,0" BackgroundColor="red">
+                                    <StackLayout Margin="0,70,0,0">
+                                        <Label Text="{Binding Nombre}" TextColor="White" ></Label>
+                                        <Label Text="{Binding Fecha}" TextColor="White" CharacterSpacing="1" FontSize="20" Margin="0,0,0,5"></Label>
+                                        <Label Text="{Binding Flujo}" TextColor="White" ></Label>
+                                        <Label Text="{Binding Estado}" TextColor="White" ></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
                 </CollectionView>
                 
             </Grid>

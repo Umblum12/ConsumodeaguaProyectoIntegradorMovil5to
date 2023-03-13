@@ -8,15 +8,24 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace Consumodeagua.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UsuarioHistorial : ContentPage
     {
+        UsuarioHistorialViewModel vm;
         public UsuarioHistorial()
         {
+            vm = new UsuarioHistorialViewModel(Navigation);
             InitializeComponent();
-            BindingContext = new UsuarioHistorialViewModel(Navigation);
+            BindingContext = vm;
+            this.Appearing += UsuarioHistorial_Appearing;
+        }
+
+        private void UsuarioHistorial_Appearing(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

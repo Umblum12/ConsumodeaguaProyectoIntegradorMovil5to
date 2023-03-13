@@ -12,16 +12,10 @@ namespace Consumodeagua.ViewModels
     {
         public LoginViewModel()
         {
-            LoginCommand = new Command(OnLoginClicked);
-            RegisterCommand = new Command(OnRegisterClicked);
         }
-
-
 
         #region VARIABLES
         string _Texto;
-        public Command LoginCommand { get; }
-        public Command RegisterCommand { get; }
         #endregion
         #region CONSTRUCTOR
         public LoginViewModel(INavigation navigation)
@@ -38,29 +32,21 @@ namespace Consumodeagua.ViewModels
         }
         #endregion
         #region PROCESOS
-        private async Task Login()
-        {
-
-        }
-        public async Task Volver()
-        {
-
-        }
-        private async void OnLoginClicked(object obj)
+        private async Task OnLoginClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(UsuarioPrincipal_SensordeFlujo)}");
         }
 
-        private async void OnRegisterClicked(object obj)
+        private async Task OnRegisterClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(RegisterPage)}");
         }
         #endregion
         #region COMANDOS
-        public ICommand Logincomand => new Command(async () => await Login());
-        public ICommand Volvercomand => new Command(async () => await Volver());
+        public ICommand LoginCommand => new Command(async () => await OnLoginClicked());
+        public ICommand RegisterCommand => new Command(async () => await OnRegisterClicked());
 
         #endregion
 

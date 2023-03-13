@@ -135,6 +135,9 @@
     <FlyoutItem Title="Perfil" Icon="https://i.ibb.co/LzTYFcC/16363.png">
         <ShellContent Route="Perfil" ContentTemplate="{DataTemplate local:Perfil}" />
     </FlyoutItem>
+    <FlyoutItem Title="Graficas">
+        <ShellContent Route="Graficas" ContentTemplate="{DataTemplate local:Graficas}" />
+    </FlyoutItem>
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" IconImageSource="Icono_Logout_Menu.png" Clicked="OnMenuItemClicked">
     </MenuItem>

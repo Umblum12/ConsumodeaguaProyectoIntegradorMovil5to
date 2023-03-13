@@ -78,18 +78,27 @@ namespace Consumodeagua.ViewModels
         #region PROCESOS
         public async Task InsertarUsu()
         {
+           
             var funcion = new DUsuario();
             var parametros = new MUsuario();
+            if (TxtNombre == null || TxtApellidoPaterno == null || TxtApellidoMaterno == null || TxtDireccion == null || TxtCorreoElectronico == null || DatFechaNacimiento == null || TxtContrasena == null)
+            {
+                await DisplayAlert("Registro Fallido", "El usuario se no se pudo registrar, no deje los campos vacios", "Continuar");
+            }
+            else
+            {
+                parametros.Nombre = TxtNombre;
+                parametros.ApellidoPaterno = TxtApellidoPaterno;
+                parametros.ApellidoMaterno = TxtApellidoMaterno;
+                parametros.Direccion = TxtDireccion;
+                parametros.CorreoElectronico = TxtCorreoElectronico;
+                parametros.FechaNacimiento = DatFechaNacimiento;
+                parametros.Contrasena = TxtContrasena;
 
-            parametros.Nombre = TxtNombre;
-            parametros.ApellidoPaterno = TxtApellidoPaterno;
-            parametros.ApellidoMaterno = TxtApellidoMaterno;
-            parametros.Direccion = TxtDireccion;
-            parametros.CorreoElectronico = TxtCorreoElectronico;
-            parametros.FechaNacimiento = DatFechaNacimiento;
-            parametros.Contrasena = TxtContrasena;
-
-            await funcion.InsertarUsuario(parametros);
+                await funcion.InsertarUsuario(parametros);
+                await DisplayAlert("Registro Exitoso", "El usuario se registro exitosamente", "Continuar");
+                await OnVolverLoginClicked();
+            }
         }
         private async Task OnVolverLoginClicked()
         {
