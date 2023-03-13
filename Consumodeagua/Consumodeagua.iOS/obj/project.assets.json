@@ -1202,24 +1202,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CD15\\.nuget\\packages\\": {},
+    "C:\\Users\\abela\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\abela\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
       "projectName": "Consumodeagua.iOS",
-      "projectPath": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
-      "packagesPath": "C:\\Users\\CD15\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\obj\\",
+      "projectPath": "C:\\Users\\abela\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
+      "packagesPath": "C:\\Users\\abela\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\abela\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\CD15\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abela\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1233,8 +1233,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj": {
-              "projectPath": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj"
+            "C:\\Users\\abela\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj": {
+              "projectPath": "C:\\Users\\abela\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj"
             }
           }
         }

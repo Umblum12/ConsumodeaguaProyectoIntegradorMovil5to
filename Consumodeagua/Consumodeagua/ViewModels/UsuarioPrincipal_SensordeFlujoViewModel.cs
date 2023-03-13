@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Consumodeagua.Views;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -10,10 +11,9 @@ namespace Consumodeagua.ViewModels
     {
         public UsuarioPrincipal_SensordeFlujoViewModel()
         {
+            
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
-
-        public ICommand OpenWebCommand { get; }
 
         #region VARIABLES
         string _Texto;
@@ -22,6 +22,7 @@ namespace Consumodeagua.ViewModels
         bool _bnt_click;
         int _N1;
         string _ImgSFA;
+        public ICommand OpenWebCommand { get; }
 
         #endregion
         #region CONSTRUCTOR
@@ -96,14 +97,15 @@ namespace Consumodeagua.ViewModels
                 LContadosTXT = "0";
             }
         }
-        public async Task Perfil()
+        private async Task OnPerfilClicked()
         {
-          
+            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+            await Shell.Current.GoToAsync($"//{nameof(Perfil)}");
         }
         #endregion
         #region COMANDOS
-        public ICommand Perfilcomand => new Command(async () => await Perfil());
         public ICommand SimularFlujoAguacomand => new Command(SimularFlujoAgua);
+        public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
         #endregion
     }
 }

@@ -7,6 +7,7 @@
              x:Class="Consumodeagua.Views.LoginPage"
              BackgroundColor="#183592"
              Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
              >
     <ContentPage.Content>
         <StackLayout>
@@ -20,24 +21,24 @@
 
                 <StackLayout>
                     <Grid>
-                        <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Placeholder="Usuario" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                        <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
-                        <Label Grid.Row="2" Grid.Column="2" TextColor="Black" ></Label>
-                        <Button Grid.Row="3" Grid.Column="1" HeightRequest="51" Grid.ColumnSpan="1" Text="INICIAR SESIÓN" FontAttributes="Bold" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding LoginCommand}"></Button> 
+                        <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Usuario" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
+                        <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
+                        <Label Grid.Row="0" Grid.Column="3" TextColor="Black" ></Label>
+                        <Button Margin="0,-30,0,30" Grid.Row="5" Grid.Column="1" HeightRequest="51" Grid.ColumnSpan="2" CornerRadius="40"  Text="INICIAR SESIÓN" FontAttributes="Bold" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding LoginCommand}"></Button> 
                     </Grid>
                 </StackLayout>
 
-                <StackLayout Margin="0,-25,0,0">
+                <StackLayout>
                     <Grid>
-                        <Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" Text="¿Aun no tienes una cuenta?" FontAttributes="Bold" TextColor="White" FontSize="18" VerticalOptions="Start" HorizontalOptions="Start" ></Label>
-                        <Label Grid.Row="8" Grid.Column="4" TextColor="Black"></Label>
+                        <Label Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4" Text="¿Aún no tienes una cuenta?" FontAttributes="Bold" TextColor="White" FontSize="18" VerticalOptions="Start" HorizontalOptions="Start" ></Label>
+                        <Label Grid.Row="6" Grid.Column="4" TextColor="Black"></Label>
                     </Grid>
                 </StackLayout>
                 <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="5" Color="White"/>
-                <StackLayout>
+                <StackLayout Margin="0,30,0,30">
                     <Grid>
                         <Label Grid.Row="0" Grid.Column="3" TextColor="Black"></Label>
-                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="REGISTRARSE" FontAttributes="Bold"  TextColor="Black" BackgroundColor="#1181e3" Command="{Binding Registrocomand}"></Button>
+                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="REGISTRARSE" FontAttributes="Bold" CornerRadius="40" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding RegisterCommand}"></Button>
                     </Grid>
                 </StackLayout>
             </StackLayout>

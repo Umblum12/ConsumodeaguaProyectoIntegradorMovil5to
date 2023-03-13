@@ -2,7 +2,7 @@
 
 namespace Consumodeagua.Models
 {
-    public class Historial
+    public class MHistorial
     {
         public int IdHistoiral { get; set; }
         public int IDUsuario { get; set; }

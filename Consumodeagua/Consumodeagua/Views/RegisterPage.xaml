@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Consumodeagua.Views.RegisterPage"
+             xmlns:vm="clr-namespace:Consumodeagua.ViewModels"
+             Title="{Binding Title}"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#183592"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#1181e3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <StackLayout Orientation="Horizontal" Padding="20">
+            <Image Source="Icono_Flecha_Atras.png" WidthRequest="50">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding VolverLoginCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+
+        <Grid>
+            <StackLayout Margin="-10,-30,0,0">
+                <Image Grid.Row="0"  Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="150" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Grid>
+        <Label Text="Registrarse" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="24"></Label>
+        <StackLayout Margin="10,-30,40,0">
+            <Grid>
+                <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Nombre" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
+                <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Apellido Paterno" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
+                <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Apellido Materno" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
+                <Entry Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Direccion" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
+                <Entry Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Correo Electronico" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
+                <DatePicker Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="10" MinimumDate="01/01/1923" MaximumDate="12/31/2023"></DatePicker>
+                <Entry Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
+                <Entry Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Confimar Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout Margin="0,30,0,30">
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="3" TextColor="Black"></Label>
+                <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="40"  Text="CREAR CUENTA" FontAttributes="Bold"  TextColor="Black" BackgroundColor="#1181e3"></Button>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

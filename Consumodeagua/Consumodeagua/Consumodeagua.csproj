@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Perfil.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>Perfil.xaml</DependentUpon>

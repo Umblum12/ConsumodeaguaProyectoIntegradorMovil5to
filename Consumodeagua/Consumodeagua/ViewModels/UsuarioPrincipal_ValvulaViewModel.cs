@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Consumodeagua.Views;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -83,13 +84,14 @@ namespace Consumodeagua.ViewModels
                 btn_AbrirCerrarTXT = "Abierto";
             }
         }
-        public async Task Perfil()
+        private async Task OnPerfilClicked()
         {
-            
+            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+            await Shell.Current.GoToAsync($"//{nameof(Perfil)}");
         }
         #endregion
         #region COMANDOS
-        public ICommand Perfilcomand => new Command(async () => await Perfil());
+        public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
         public ICommand btn_Abrir_Cerrarcomand => new Command(btn_Abrir_Cerrar);
         #endregion
     }

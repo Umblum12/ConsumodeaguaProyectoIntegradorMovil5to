@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Consumodeagua.Views;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -33,9 +34,10 @@ namespace Consumodeagua.ViewModels
         }
         #endregion
         #region PROCESOS
-        public async Task Perfil()
+        private async Task OnPerfilClicked()
         {
-
+            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+            await Shell.Current.GoToAsync($"//{nameof(Perfil)}");
         }
         public async Task Volver()
         {
@@ -43,7 +45,7 @@ namespace Consumodeagua.ViewModels
         }
         #endregion
         #region COMANDOS
-        public ICommand Perfilcomand => new Command(async () => await Perfil());
+        public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
         public ICommand Volvercomand => new Command(async () => await Volver());
         #endregion
     }

@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "VRMtkzmCtoEaGbAt+FeDFgG1gjvSJB2E45IqBDSFx7E7YvJbog0/WRwHdVp8vR6DXlBYFw96b6VNX4AEgZoCPw==",
+  "dgSpecHash": "/aS09CxA3+R66UlBe484j82kwVSlzjGpOjMdijYhaVDzb38YN45qRa0jk3eXNfAUPatdgPELJRkuVtW7dKaJXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CD15\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
+  "projectFilePath": "C:\\Users\\abela\\Desktop\\Consumodeagua\\Consumodeagua\\Consumodeagua.iOS\\Consumodeagua.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\CD15\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
-    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2196\\xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512",
-    "C:\\Users\\CD15\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
+    "C:\\Users\\abela\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\abela\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\abela\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\abela\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2196\\xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\abela\\.nuget\\packages\\xamarin.ios.materialcomponents\\92.0.0\\xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
   ],
   "logs": [
     {
