@@ -82,10 +82,7 @@ C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Cons
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Consumodeagua.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
-C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
-C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
-C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\Perfil.xaml.g.cs
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\RegisterPage.xaml.g.cs
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\UsuarioHistorial.xaml.g.cs

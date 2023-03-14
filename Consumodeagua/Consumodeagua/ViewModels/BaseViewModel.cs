@@ -1,66 +1,21 @@
-﻿using Consumodeagua.Models;
-using Consumodeagua.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
-namespace Consumodeagua.ViewModels
+using System.Runtime.CompilerServices;
+using System.ComponentModel;
+namespace Consumodeagua.VistaModelo
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
-
-
-   
-
-    public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
-        bool isBusy = false;
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
-        }
-
-        string title = string.Empty;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
-
-        protected bool SetProperty<T>(ref T backingStore, T value,
-            [CallerMemberName] string propertyName = "",
-            Action onChanged = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(backingStore, value))
-                return false;
-
-            backingStore = value;
-            onChanged?.Invoke();
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
-
-        #region bvmProfe
         public INavigation Navigation;
 
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnpropertyChanged([CallerMemberName] string nombre = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nombre));
+        }
         private ImageSource foto;
         public ImageSource Foto
         {
@@ -68,8 +23,13 @@ namespace Consumodeagua.ViewModels
             set
             {
                 foto = value;
-                OnPropertyChanged();
+                OnpropertyChanged();
             }
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         public async Task DisplayAlert(string title, string message, string cancel)
@@ -82,6 +42,51 @@ namespace Consumodeagua.ViewModels
             return await Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
 
+        protected bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(field, value))
+            {
+                return false;
+            }
+
+            field = value;
+            OnPropertyChanged(propertyName);
+
+            return true;
+        }
+
+        private string _title;
+        public string Title
+        {
+            get { return _title; }
+            set
+            {
+                SetProperty(ref _title, value);
+            }
+        }
+
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                SetProperty(ref _isBusy, value);
+            }
+        }
+        protected void SetValue<T>(ref T backingFieled, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (EqualityComparer<T>.Default.Equals(backingFieled, value))
+
+            {
+
+                return;
+
+            }
+
+            backingFieled = value;
+
+            OnPropertyChanged(propertyName);
+        }
     }
-    #endregion
 }

@@ -1,4 +1,5 @@
 ﻿using Consumodeagua.Views;
+using Consumodeagua.VistaModelo;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -36,32 +37,32 @@ namespace Consumodeagua.ViewModels
         public string Texto
         {
             get { return _Texto; }
-            set { SetProperty(ref _Texto, value); }
+            set { SetValue(ref _Texto, value); }
         }
         public string LContadosTXT
         {
             get { return _LContadosTXT; }
-            set { SetProperty(ref _LContadosTXT, value); }
+            set { SetValue(ref _LContadosTXT, value); }
         }
         public bool btnEnableValv
         {
             get { return _btnEnableValv; }
-            set { SetProperty(ref _btnEnableValv, value); }
+            set { SetValue(ref _btnEnableValv, value); }
         }
         public bool bnt_click
         {
             get { return _bnt_click; }
-            set { SetProperty(ref _bnt_click, value); }
+            set { SetValue(ref _bnt_click, value); }
         }
         public int N1
         {
             get { return _N1; }
-            set { SetProperty(ref _N1, value); }
+            set { SetValue(ref _N1, value); }
         }
         public string ImgSFA
         {
             get { return _ImgSFA; }
-            set { SetProperty(ref _ImgSFA, value); }
+            set { SetValue(ref _ImgSFA, value); }
         }
         #endregion
         #region PROCESOS

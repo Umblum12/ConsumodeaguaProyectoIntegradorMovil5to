@@ -14,18 +14,10 @@ namespace Consumodeagua.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UsuarioHistorial : ContentPage
     {
-        UsuarioHistorialViewModel vm;
         public UsuarioHistorial()
         {
-            vm = new UsuarioHistorialViewModel(Navigation);
             InitializeComponent();
-            BindingContext = vm;
-            this.Appearing += UsuarioHistorial_Appearing;
-        }
-
-        private void UsuarioHistorial_Appearing(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            BindingContext = new UsuarioHistorialViewModel(Navigation);
         }
     }
 }

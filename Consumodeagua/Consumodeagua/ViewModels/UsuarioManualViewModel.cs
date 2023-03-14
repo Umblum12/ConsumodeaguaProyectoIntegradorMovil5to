@@ -1,4 +1,5 @@
 ﻿using Consumodeagua.Views;
+using Consumodeagua.VistaModelo;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -27,7 +28,7 @@ namespace Consumodeagua.ViewModels
         public string Texto
         {
             get { return _Texto; }
-            set { SetProperty(ref _Texto, value); }
+            set { SetValue(ref _Texto, value); }
         }
         #endregion
         #region PROCESOS

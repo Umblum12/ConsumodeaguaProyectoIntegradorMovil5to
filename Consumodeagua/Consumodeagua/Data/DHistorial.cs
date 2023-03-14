@@ -6,6 +6,9 @@ using Consumodeagua.Conexion;
 using Firebase.Database.Query;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using Firebase.Database;
+using System.Diagnostics;
 
 namespace Consumodeagua.Data
 {
@@ -24,18 +27,20 @@ namespace Consumodeagua.Data
                 });
         }
 
-        public async Task<List<MHistorial>> MostrarHistorial()
+        public async Task<ObservableCollection<MHistorial>> MostrarHistoriales()
         {
-            return (await Cconexion.firebase
+            var data = await Task.Run(() => Cconexion.firebase
                 .Child("Historial")
-                .OnceAsync<MHistorial>())
-                .Select(item => new MHistorial
-                 {
-                    Nombre = item.Object.Nombre,
-                    Fecha = item.Object.Fecha,
-                    Flujo = item.Object.Flujo,
-                    Estado = item.Object.Estado
-                 }).ToList();
+                .AsObservable<MHistorial>()
+                .AsObservableCollection());
+
+            Debug.WriteLine(data.ToList());
+
+            foreach(MHistorial item in data) 
+            {
+                Debug.WriteLine($"PONME ATENCION WE {item.Nombre} {item.Estado} {item.Flujo} {item.Fecha}");
+            }
+            return data;
         }
 
     }

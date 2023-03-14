@@ -1,4 +1,5 @@
 ﻿using Consumodeagua.Views;
+using Consumodeagua.VistaModelo;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -38,37 +39,37 @@ namespace Consumodeagua.ViewModels
         public string Texto
         {
             get { return _Texto; }
-            set { SetProperty(ref _Texto, value); }
+            set { SetValue(ref _Texto, value); }
         }
         public string ImgValvula
         {
             get { return _ImgValvula; }
-            set { SetProperty(ref _ImgValvula, value); }
+            set { SetValue(ref _ImgValvula, value); }
         }
         public bool btnEnableValv
         {
             get { return _btnEnableValv; }
-            set { SetProperty(ref _btnEnableValv, value); }
+            set { SetValue(ref _btnEnableValv, value); }
         }
         public bool bnt_click
         {
             get { return _bnt_click; }
-            set { SetProperty(ref _bnt_click, value); }
+            set { SetValue(ref _bnt_click, value); }
         }
         public string btn_AbrirCerrarColor
         {
             get { return _btn_AbrirCerrarColor; }
-            set { SetProperty(ref _btn_AbrirCerrarColor, value); }
+            set { SetValue(ref _btn_AbrirCerrarColor, value); }
         }
         public string btn_AbrirCerrarTXT
         {
             get { return _btn_AbrirCerrarTXT; }
-            set { SetProperty(ref _btn_AbrirCerrarTXT, value); }
+            set { SetValue(ref _btn_AbrirCerrarTXT, value); }
         }
         public bool estado
         {
             get { return _estado; }
-            set { SetProperty(ref _estado, value); }
+            set { SetValue(ref _estado, value); }
         }
         #endregion
         #region PROCESOS

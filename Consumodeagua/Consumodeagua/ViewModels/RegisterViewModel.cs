@@ -1,6 +1,7 @@
 ﻿using Consumodeagua.Data;
 using Consumodeagua.Models;
 using Consumodeagua.Views;
+using Consumodeagua.VistaModelo;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,42 +38,42 @@ namespace Consumodeagua.ViewModels
         public string TxtNombre
         {
             get { return _TxtNombre; }
-            set { SetProperty(ref _TxtNombre, value); }
+            set { SetValue(ref _TxtNombre, value); }
         }
         public string TxtApellidoPaterno
         {
             get { return _TxtApellidoPaterno; }
-            set { SetProperty(ref _TxtApellidoPaterno, value); }
+            set { SetValue(ref _TxtApellidoPaterno, value); }
         }
         public string TxtApellidoMaterno
         {
             get { return _TxtApellidoMaterno; }
-            set { SetProperty(ref _TxtApellidoMaterno, value); }
+            set { SetValue(ref _TxtApellidoMaterno, value); }
         }
         public string TxtDireccion
         {
             get { return _TxtDireccion; }
-            set { SetProperty(ref _TxtDireccion, value); }
+            set { SetValue(ref _TxtDireccion, value); }
         }
         public string TxtCorreoElectronico
         {
             get { return _TxtCorreoElectronico; }
-            set { SetProperty(ref _TxtCorreoElectronico, value); }
+            set { SetValue(ref _TxtCorreoElectronico, value); }
         }
         public DateTime DatFechaNacimiento
         {
             get { return _DatFechaNacimiento; }
-            set { SetProperty(ref _DatFechaNacimiento, value); }
+            set { SetValue(ref _DatFechaNacimiento, value); }
         }
         public string TxtContrasena
         {
             get { return _TxtContrasena; }
-            set { SetProperty(ref _TxtContrasena, value); }
+            set { SetValue(ref _TxtContrasena, value); }
         }
         public string TxtConfirmarContrasena
         {
             get { return _TxtConfirmarContrasena; }
-            set { SetProperty(ref _TxtConfirmarContrasena, value); }
+            set { SetValue(ref _TxtConfirmarContrasena, value); }
         }
         #endregion
         #region PROCESOS

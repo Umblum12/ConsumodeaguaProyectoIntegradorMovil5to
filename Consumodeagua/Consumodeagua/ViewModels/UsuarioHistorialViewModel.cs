@@ -7,6 +7,9 @@ using Xamarin.Forms;
 using Consumodeagua.Models;
 using Consumodeagua.Data;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using Consumodeagua.VistaModelo;
 
 namespace Consumodeagua.ViewModels
 {
@@ -18,12 +21,11 @@ namespace Consumodeagua.ViewModels
 
         #region VARIABLES
         string _Texto;
-        string _TxtIDUsuario;
-        string _TxtNombre;
-        DateTime _DatFecha;
-        int _TxtFlujo;
-        bool _TxtEstado;
-        List<MHistorial> _ListaHistorial;
+        string _Nombre;
+        DateTime _datefecha;
+        int _Flujo;
+        bool _Estado;
+        ObservableCollection<MHistorial> _ListaHistorial;
         #endregion
         #region CONSTRUCTOR
         public UsuarioHistorialViewModel(INavigation navigation)
@@ -39,35 +41,19 @@ namespace Consumodeagua.ViewModels
             get { return _Texto; }
             set { SetProperty(ref _Texto, value); }
         }
-        public string TxtIDUsuario
+        public DateTime datefecha
         {
-            get { return _TxtIDUsuario; }
-            set { SetProperty(ref _TxtIDUsuario, value); }
+            get { return _datefecha; }
+            set { SetValue(ref _datefecha, value); }
         }
-        public string TxtNombre
-        {
-            get { return _TxtNombre; }
-            set { SetProperty(ref _TxtNombre, value); }
-        }
-        public DateTime DatFecha
-        {
-            get { return _DatFecha; }
-            set { SetProperty(ref _DatFecha, value); }
-        }
-        public int TxtFlujo
-        {
-            get { return _TxtFlujo; }
-            set { SetProperty(ref _TxtFlujo, value); }
-        }
-        public bool TxtEstado
-        {
-            get { return _TxtEstado; }
-            set { SetProperty(ref _TxtEstado, value); }
-        }
-        public List<MHistorial> ListaHistorial
+        public ObservableCollection<MHistorial> ListaHistorial
         {
             get { return _ListaHistorial; }
-            set { SetProperty(ref _ListaHistorial, value); }
+            set
+            {
+                SetValue(ref _ListaHistorial, value);
+                OnpropertyChanged();
+            }
         }
         #endregion
         #region PROCESOS
@@ -75,19 +61,16 @@ namespace Consumodeagua.ViewModels
         {
             var funcion = new DHistorial();
             var parametros = new MHistorial();
-
                 parametros.Nombre = "Abelardo";
-                parametros.Fecha = DatFecha;
+                parametros.Fecha = datefecha;
                 parametros.Flujo = 399;
                 parametros.Estado = true;
-
                 await funcion.InsertarHistorial(parametros);
         }
-
         public async Task MostrarHistorial()
         {
             var funcion = new DHistorial();
-            ListaHistorial=await funcion.MostrarHistorial();
+            ListaHistorial = await funcion.MostrarHistoriales();
         }
         private async Task OnPerfilClicked()
         {

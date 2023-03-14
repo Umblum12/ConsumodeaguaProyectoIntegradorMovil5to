@@ -23,32 +23,44 @@
                     <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
                 </StackLayout>
             </StackLayout>
-            <Button Text="hola" Command="{Binding InsertarHistocomand}"></Button>
             <StackLayout>
-                <Button Text="hola" Command="{Binding InsertarHistocomand}"></Button>
+                <Button Text="InsertarRegistro" Command="{Binding InsertarHistocomand}"></Button>
             </StackLayout>
-            <Grid RowDefinitions="60,*">
-                <Label Text="Historial" HorizontalOptions="Center" VerticalOptions="Center" FontSize="28" FontAttributes="Bold" TextColor="Black">
-                </Label>
-                <CollectionView BackgroundColor="#383592" ItemsSource="{Binding ListaHistorial}">
+
+
+            <Grid RowDefinitions="60,*" BackgroundColor="White">
+                <Label Text="POKEDEX" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="40"
+               FontAttributes="Bold"
+               TextColor="Pink"/>
+                <CollectionView BackgroundColor="Red"
+                        Grid.Row="1"
+                        ItemsSource="{Binding ListaHistorial}"
+                        Margin="0,0,0,0"
+                        >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid RowDefinitions="100,*" Margin="0,10,0,0">
-                                <Frame Grid.Row="1" WidthRequest="250" HorizontalOptions="Center" CornerRadius="15" Margin="0,-38,0,0" BackgroundColor="red">
-                                    <StackLayout Margin="0,70,0,0">
-                                        <Label Text="{Binding Nombre}" TextColor="White" ></Label>
-                                        <Label Text="{Binding Fecha}" TextColor="White" CharacterSpacing="1" FontSize="20" Margin="0,0,0,5"></Label>
-                                        <Label Text="{Binding Flujo}" TextColor="White" ></Label>
+                            <Grid RowDefinitions="100, *" Margin="10,15,0,0">
+                                <Frame Grid.Row="1" WidthRequest="250" HorizontalOptions="Center" CornerRadius="15" Margin="10,-95,10,0" BackgroundColor="{Binding Colorfondo}" HasShadow="False">
+                                    <StackLayout Margin="0,10,0,0">
+                                        <Label Text="{Binding Nombre}"/>
+                                        <Label Text="{Binding Fecha}" Margin="0,0,0,5" CharacterSpacing="1" FontSize="20" />
+                                        <Button Text="{Binding Flujo}" CornerRadius="30" HorizontalOptions="Start" TextTransform="None" HeightRequest="40" BackgroundColor="{Binding Colorpoder}"/>
                                         <Label Text="{Binding Estado}" TextColor="White" ></Label>
                                     </StackLayout>
                                 </Frame>
+                                <Image Source="{Binding Icono}" Grid.RowSpan="2" HeightRequest="180" VerticalOptions="StartAndExpand" Margin="105,0,0,0" />
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                
+                <Button Text="+" Grid.Row="1" HeightRequest="100" WidthRequest="100" VerticalOptions="End" HorizontalOptions="End" CornerRadius="50" Margin="15" FontSize="50" FontAttributes="Bold" BackgroundColor="#FCE412" Command="{Binding Iraregistrocommand}" />
             </Grid>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
