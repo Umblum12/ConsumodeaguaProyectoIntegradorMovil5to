@@ -124,6 +124,10 @@
             "Xamarin.Forms.Visual.Material": {
               "target": "Package",
               "version": "[5.0.0.2196, )"
+            },
+            "swipeview.TypeScript.DefinitelyTyped": {
+              "target": "Package",
+              "version": "[0.2.5, )"
             }
           },
           "imports": [

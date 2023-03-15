@@ -83,6 +83,9 @@
           }
         }
       },
+      "swipeview.TypeScript.DefinitelyTyped/0.2.5": {
+        "type": "package"
+      },
       "System.IO/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -494,6 +497,18 @@
         "newtonsoft.json.13.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "swipeview.TypeScript.DefinitelyTyped/0.2.5": {
+      "sha512": "qWA6HZWV9fZR4ABUgoILPui0ljmKkIUp31abMRypmfKUVxqYOKfT4QWe5+FHf2TwkeezgCHI3Nlye/78dlJ85Q==",
+      "type": "package",
+      "path": "swipeview.typescript.definitelytyped/0.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/typings/swipeview/swipeview.d.ts",
+        "swipeview.typescript.definitelytyped.0.2.5.nupkg.sha512",
+        "swipeview.typescript.definitelytyped.nuspec"
       ]
     },
     "System.IO/4.3.0": {
@@ -1413,7 +1428,8 @@
       "NETStandard.Library >= 2.0.3",
       "Xamarin.Essentials >= 1.7.5",
       "Xamarin.Forms >= 5.0.0.2196",
-      "Xamarin.Forms.Visual.Material >= 5.0.0.2196"
+      "Xamarin.Forms.Visual.Material >= 5.0.0.2196",
+      "swipeview.TypeScript.DefinitelyTyped >= 0.2.5"
     ]
   },
   "packageFolders": {
@@ -1482,6 +1498,10 @@
           "Xamarin.Forms.Visual.Material": {
             "target": "Package",
             "version": "[5.0.0.2196, )"
+          },
+          "swipeview.TypeScript.DefinitelyTyped": {
+            "target": "Package",
+            "version": "[0.2.5, )"
           }
         },
         "imports": [

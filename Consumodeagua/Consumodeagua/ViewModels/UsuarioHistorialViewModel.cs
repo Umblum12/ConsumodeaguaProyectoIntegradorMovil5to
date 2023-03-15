@@ -21,10 +21,7 @@ namespace Consumodeagua.ViewModels
 
         #region VARIABLES
         string _Texto;
-        string _Nombre;
         DateTime _datefecha;
-        int _Flujo;
-        bool _Estado;
         ObservableCollection<MHistorial> _ListaHistorial;
         #endregion
         #region CONSTRUCTOR
@@ -57,7 +54,7 @@ namespace Consumodeagua.ViewModels
         }
         #endregion
         #region PROCESOS
-        public async Task InsertarHisto()
+        public async Task InsertarRegHisto()
         {
             var funcion = new DHistorial();
             var parametros = new MHistorial();
@@ -72,6 +69,11 @@ namespace Consumodeagua.ViewModels
             var funcion = new DHistorial();
             ListaHistorial = await funcion.MostrarHistoriales();
         }
+        public async Task EliminarRegHisto()
+        {
+            var funcion = new DHistorial();
+            ListaHistorial = await funcion.MostrarHistoriales();
+        }
         private async Task OnPerfilClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
@@ -80,7 +82,8 @@ namespace Consumodeagua.ViewModels
         #endregion
         #region COMANDOS
         public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
-        public ICommand InsertarHistocomand => new Command(async () => await InsertarHisto());
+        public ICommand InsertarRegHistocomand => new Command(async () => await InsertarRegHisto());
+        public ICommand EliminarRegHistocomand => new Command(async () => await EliminarRegHisto());
         #endregion
     }
 }
