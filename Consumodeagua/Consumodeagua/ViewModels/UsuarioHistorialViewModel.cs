@@ -77,7 +77,6 @@ namespace Consumodeagua.ViewModels
             {
                 // El usuario seleccionó "Sí"
                 var funcion = new DHistorial();
-                var claveRegistro = registroSeleccionado.Key;
                 var key = "NQwxjxP4DXL4uto70hk"; // la clave del registro que desea eliminar
                 var result = await funcion.DeleteRegHistorial(key);
                 await DisplayAlert("Acceptado", "Registro eliminado", "Ok");
