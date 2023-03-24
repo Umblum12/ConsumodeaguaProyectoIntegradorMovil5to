@@ -98,5 +98,6 @@ namespace Consumodeagua.ViewModels
         public ICommand InsertarRegHistocomand => new Command(async () => await InsertarRegHisto());
         public ICommand EliminarRegHistocomand => new Command(async () => await EliminarRegHisto());
         #endregion
+
     }
 }

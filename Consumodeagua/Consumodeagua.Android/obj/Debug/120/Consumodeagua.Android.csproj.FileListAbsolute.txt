@@ -2671,3 +2671,4 @@ C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Cons
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\res\drawable\icono_borrar.png

@@ -42,7 +42,7 @@
                                                 <TapGestureRecognizer Command="{Binding Source={Reference _ListaHistorial}, Path=BindingContext.EliminarRegHistocomand}" CommandParameter="{Binding .}"/>
                                             </Grid.GestureRecognizers>
                                             <BoxView CornerRadius="24" BackgroundColor="red" Grid.RowSpan="2" />
-                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Margin="0,36,0,0" Source="Icono_Manual_Menu.png"/>
+                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Margin="0,36,0,0" Source="Icono_Borrar.png"/>
                                         </Grid>
                                     </SwipeItemView>
                                 </SwipeView.RightItems>
