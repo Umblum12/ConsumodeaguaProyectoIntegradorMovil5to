@@ -41,7 +41,7 @@ namespace Consumodeagua.Data
         //Peticiones a la API Json
         Cconexion conexion = new Cconexion();
         // Para realizar una solicitud GET
-        public async Task<ObservableCollection<MHistorial>> MostrarHistoriales()
+        public async Task<ObservableCollection<MHistorial>> MostrarRegHistorial()
         {
             var response = await conexion.GetAsync("Consumodeagua.json");
             var json = response.ToString();
@@ -56,7 +56,7 @@ namespace Consumodeagua.Data
 
         }
         // Para realizar una solicitud POST
-        public async Task InsertarHistoriale(MHistorial parametros)
+        public async Task InsertarRegHistorial(MHistorial parametros)
         {
             MHistorial Insert = new MHistorial
             {
@@ -71,7 +71,7 @@ namespace Consumodeagua.Data
             var result = response.ToString();
         }
         // Para realizar una solicitud DELETE
-        public async Task<string> DeleteHistorialAsync(string key)
+        public async Task<string> DeleteRegHistorial(string key)
         {
             return await conexion.DeleteAsync($"Consumodeagua/Historial/{key}.json");
         }

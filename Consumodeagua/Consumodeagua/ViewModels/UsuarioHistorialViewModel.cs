@@ -58,21 +58,35 @@ namespace Consumodeagua.ViewModels
         {
             var funcion = new DHistorial();
             var parametros = new MHistorial();
-                parametros.Nombre = "Abelardo";
-                parametros.Fecha = datefecha;
-                parametros.Flujo = 399;
-                parametros.Estado = true;
-                await funcion.InsertarHistorial(parametros);
+            parametros.Nombre = "Abelardo";
+            parametros.Fecha = datefecha;
+            parametros.Flujo = 399;
+            parametros.Estado = true;
+            await funcion.InsertarRegHistorial(parametros);
         }
         public async Task MostrarHistorial()
         {
             var funcion = new DHistorial();
-            ListaHistorial = await funcion.MostrarHistoriales();
+            ListaHistorial = await funcion.MostrarRegHistorial();
         }
         public async Task EliminarRegHisto()
         {
-            var funcion = new DHistorial();
-            ListaHistorial = await funcion.MostrarHistoriales();
+            bool respuesta = await DisplayAlert("Confirmación", "¿Estás seguro de que deseas continuar?", "Acceptar", "Cancelar");
+
+            if (respuesta)
+            {
+                // El usuario seleccionó "Sí"
+                var funcion = new DHistorial();
+                var claveRegistro = registroSeleccionado.Key;
+                var key = "NQwxjxP4DXL4uto70hk"; // la clave del registro que desea eliminar
+                var result = await funcion.DeleteRegHistorial(key);
+                await DisplayAlert("Acceptado", "Registro eliminado", "Ok");
+            }
+            else
+            {
+                // El usuario seleccionó "No"
+                await DisplayAlert("Cancelado", "Registro no eliminado", "Ok");
+            }
         }
         private async Task OnPerfilClicked()
         {

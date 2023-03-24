@@ -24,6 +24,7 @@
         <CollectionView BackgroundColor="#1181e3"
                         Grid.Row="1"
                         ItemsSource="{Binding ListaHistorial}"
+                        x:Name="_ListaHistorial"
                         Margin="0,80,0,0"
                         >
             <CollectionView.ItemsLayout>
@@ -38,7 +39,7 @@
                                     <SwipeItemView BackgroundColor="Transparent">
                                         <Grid RowDefinitions="Auto,*" WidthRequest="100">
                                             <Grid.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding EliminarRegHistocomand}"/>
+                                                <TapGestureRecognizer Command="{Binding Source={Reference _ListaHistorial}, Path=BindingContext.EliminarRegHistocomand}" CommandParameter="{Binding .}"/>
                                             </Grid.GestureRecognizers>
                                             <BoxView CornerRadius="24" BackgroundColor="red" Grid.RowSpan="2" />
                                             <Image VerticalOptions="Center" HorizontalOptions="Center" Margin="0,36,0,0" Source="Icono_Manual_Menu.png"/>

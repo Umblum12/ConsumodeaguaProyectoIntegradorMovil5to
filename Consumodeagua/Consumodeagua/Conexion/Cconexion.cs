@@ -20,13 +20,11 @@ namespace Consumodeagua.Conexion
             _httpClient.BaseAddress = new Uri("https://consumodeaguapi-default-rtdb.firebaseio.com/");
             apiBaseUrl = "https://consumodeaguapi-default-rtdb.firebaseio.com/";
         }
-
         public async Task<string> GetAsync(string endpoint)
         {
             var response = await _httpClient.GetAsync(endpoint);
             return await response.Content.ReadAsStringAsync();
         }
-
         public async Task<string> PostAsync(string endpoint, HttpContent content)
         {
             var response = await _httpClient.PostAsync(endpoint, content);
