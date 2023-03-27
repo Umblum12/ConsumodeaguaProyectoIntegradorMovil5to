@@ -266,3 +266,4 @@ C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Cons
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.iOS\obj\iPhone\Debug\Consumodeagua.iOS.csproj.CopyComplete
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.iOS\obj\iPhone\Debug\Consumodeagua.iOS.exe
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.iOS\obj\iPhone\Debug\Consumodeagua.iOS.pdb
+C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.iOS\bin\iPhone\Debug\Firebase.Auth.dll

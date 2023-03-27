@@ -1,4 +1,5 @@
-﻿using Consumodeagua.Views;
+﻿using Consumodeagua.Services;
+using Consumodeagua.Views;
 using Consumodeagua.VistaModelo;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Consumodeagua.ViewModels
 
         #region VARIABLES
         string _Texto;
+        string _Nombre;
+        string _Contrasena;
         #endregion
         #region CONSTRUCTOR
         public LoginViewModel(INavigation navigation)
@@ -31,12 +34,32 @@ namespace Consumodeagua.ViewModels
             get { return _Texto; }
             set { SetValue(ref _Texto, value); }
         }
+        public string Nombre
+        {
+            get { return _Nombre; }
+            set { SetValue(ref _Nombre, value); }
+        }
+        public string Contrasena
+        {
+            get { return _Contrasena; }
+            set { SetValue(ref _Contrasena, value); }
+        }
         #endregion
         #region PROCESOS
         private async Task OnLoginClicked()
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(UsuarioPrincipal_SensordeFlujo)}");
+            var InstanciaLoginAuth = new UserService();
+            var LoginAuth = await InstanciaLoginAuth.LoginAsync(Nombre, Contrasena);
+            if (LoginAuth)
+            {
+                await Shell.Current.GoToAsync($"//{nameof(UsuarioPrincipal_SensordeFlujo)}");
+                var currentUser = await InstanciaLoginAuth.GetCurrentUserAsync(); // Obtiene el usuario actual
+                await Application.Current.MainPage.DisplayAlert("Bienvenido", $"¡Hola {currentUser.Info.DisplayName}!", "OK");
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Usuario o contraseña Incorrectos", "OK");
+            }
         }
 
         private async Task OnRegisterClicked()
@@ -48,7 +71,6 @@ namespace Consumodeagua.ViewModels
         #region COMANDOS
         public ICommand LoginCommand => new Command(async () => await OnLoginClicked());
         public ICommand RegisterCommand => new Command(async () => await OnRegisterClicked());
-
         #endregion
 
     }

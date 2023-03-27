@@ -4,6 +4,7 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Consumodeagua.Android.dll" comes first in this list. */
 		"Consumodeagua.Android.dll",
 		"Consumodeagua.dll",
+		"Firebase.Auth.dll",
 		"Firebase.dll",
 		"FormsViewGroup.dll",
 		"LiteDB.dll",

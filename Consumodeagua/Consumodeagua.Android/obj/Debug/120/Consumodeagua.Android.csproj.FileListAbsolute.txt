@@ -2672,3 +2672,5 @@ C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Cons
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\res\drawable\icono_borrar.png
+C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\res\drawable\icono_editar.png
+C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua.Android\obj\Debug\120\android\assets\Firebase.Auth.dll

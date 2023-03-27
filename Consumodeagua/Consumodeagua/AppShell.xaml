@@ -129,6 +129,9 @@
     <FlyoutItem Title="Historial" Icon="Icono_Historial_Menu.png">
         <ShellContent Route="UsuarioHistorial" ContentTemplate="{DataTemplate local:UsuarioHistorial}" />
     </FlyoutItem>
+    <FlyoutItem Title="AdminHistorial" Icon="Icono_Historial_Menu.png">
+        <ShellContent Route="AdminHistorial" ContentTemplate="{DataTemplate local:AdminHistorial}" />
+    </FlyoutItem>
     <FlyoutItem Title="Manual" Icon="Icono_Manual_Menu.png">
         <ShellContent Route="UsuarioManual" ContentTemplate="{DataTemplate local:UsuarioManual}" />
     </FlyoutItem>

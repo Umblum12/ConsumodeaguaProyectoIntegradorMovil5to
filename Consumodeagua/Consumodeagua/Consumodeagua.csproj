@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FirebaseAuthentication.net" Version="4.0.2" />
     <PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
     <PackageReference Include="swipeview.TypeScript.DefinitelyTyped" Version="0.2.5" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
@@ -20,6 +21,9 @@
     <Compile Update="Views\Perfil.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>Perfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AdminHistorial.xaml.cs">
+      <DependentUpon>AdminHistorial.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\UsuarioHistorial.xaml.cs">
       <DependentUpon>UsuarioHistorial.xaml</DependentUpon>

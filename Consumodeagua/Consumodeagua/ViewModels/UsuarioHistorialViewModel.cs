@@ -69,24 +69,6 @@ namespace Consumodeagua.ViewModels
             var funcion = new DHistorial();
             ListaHistorial = await funcion.MostrarRegHistorial();
         }
-        public async Task EliminarRegHisto()
-        {
-            bool respuesta = await DisplayAlert("Confirmación", "¿Estás seguro de que deseas continuar?", "Acceptar", "Cancelar");
-
-            if (respuesta)
-            {
-                // El usuario seleccionó "Sí"
-                var funcion = new DHistorial();
-                var key = "NQwxjxP4DXL4uto70hk"; // la clave del registro que desea eliminar
-                var result = await funcion.DeleteRegHistorial(key);
-                await DisplayAlert("Acceptado", "Registro eliminado", "Ok");
-            }
-            else
-            {
-                // El usuario seleccionó "No"
-                await DisplayAlert("Cancelado", "Registro no eliminado", "Ok");
-            }
-        }
         private async Task OnPerfilClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
@@ -96,7 +78,6 @@ namespace Consumodeagua.ViewModels
         #region COMANDOS
         public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
         public ICommand InsertarRegHistocomand => new Command(async () => await InsertarRegHisto());
-        public ICommand EliminarRegHistocomand => new Command(async () => await EliminarRegHisto());
         #endregion
 
     }

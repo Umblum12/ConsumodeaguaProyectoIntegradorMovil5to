@@ -98,3 +98,4 @@ C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Cons
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Consumodeagua.pdb
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\ref\Consumodeagua.dll
 C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\Graficas.xaml.g.cs
+C:\Users\CD15\Desktop\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\AdminHistorial.xaml.g.cs

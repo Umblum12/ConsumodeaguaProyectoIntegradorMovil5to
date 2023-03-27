@@ -21,8 +21,8 @@
 
                 <StackLayout>
                     <Grid>
-                        <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Usuario" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White"></Entry>
-                        <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True"></Entry>
+                        <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Usuario" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" Text="{Binding Nombre}"></Entry>
+                        <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True" Text="{Binding Contrasena}"></Entry>
                         <Label Grid.Row="0" Grid.Column="3" TextColor="Black" ></Label>
                         <Button Margin="0,-30,0,30" Grid.Row="5" Grid.Column="1" HeightRequest="51" Grid.ColumnSpan="2" CornerRadius="40"  Text="INICIAR SESIÓN" FontAttributes="Bold" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding LoginCommand}"></Button> 
                     </Grid>
