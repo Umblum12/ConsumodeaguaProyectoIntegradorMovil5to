@@ -50,7 +50,11 @@ namespace Consumodeagua.ViewModels
         {
             var InstanciaLoginAuth = new UserService();
             var LoginAuth = await InstanciaLoginAuth.LoginAsync(Nombre, Contrasena);
-            if (LoginAuth)
+            if (Nombre == null || Nombre == "" || Contrasena == null || Contrasena == "" )
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "No se puede dejar Usuario o contraseña vacios", "OK");
+            }
+            else if (LoginAuth)
             {
                 await Shell.Current.GoToAsync($"//{nameof(UsuarioPrincipal_SensordeFlujo)}");
                 var currentUser = await InstanciaLoginAuth.GetCurrentUserAsync(); // Obtiene el usuario actual

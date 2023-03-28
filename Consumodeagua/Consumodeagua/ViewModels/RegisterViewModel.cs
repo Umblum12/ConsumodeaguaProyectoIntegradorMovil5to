@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Consumodeagua.ViewModels
@@ -81,22 +82,18 @@ namespace Consumodeagua.ViewModels
         {
            
             var funcion = new DUsuario();
-            var parametros = new MUsuario();
-            if (TxtNombre == null || TxtApellidoPaterno == null || TxtApellidoMaterno == null || TxtDireccion == null || TxtCorreoElectronico == null || DatFechaNacimiento == null || TxtContrasena == null)
+            var parametros = new MUser();
+            if (TxtNombre == null || TxtContrasena == null)
             {
                 await DisplayAlert("Registro Fallido", "El usuario se no se pudo registrar, no deje los campos vacios", "Continuar");
             }
             else
             {
-                parametros.Nombre = TxtNombre;
-                parametros.ApellidoPaterno = TxtApellidoPaterno;
-                parametros.ApellidoMaterno = TxtApellidoMaterno;
-                parametros.Direccion = TxtDireccion;
-                parametros.CorreoElectronico = TxtCorreoElectronico;
-                parametros.FechaNacimiento = DatFechaNacimiento;
-                parametros.Contrasena = TxtContrasena;
+                parametros.email = TxtNombre;
+                parametros.password = _TxtContrasena;
+                parametros.returnSecureToken = true;
 
-                await funcion.InsertarUsuario(parametros);
+                await funcion.InsertarRegHistorial(parametros);
                 await DisplayAlert("Registro Exitoso", "El usuario se registro exitosamente", "Continuar");
                 await OnVolverLoginClicked();
             }

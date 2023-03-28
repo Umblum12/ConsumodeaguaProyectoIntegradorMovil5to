@@ -45,7 +45,7 @@ namespace Consumodeagua.Services
                 catch (Exception ex)
                 {
                     // Muestra un mensaje de alerta con el error
-                    await App.Current.MainPage.DisplayAlert("Alerta", ex.Message, "OK");
+                    await App.Current.MainPage.DisplayAlert("Error", "Error al iniciar sesión", "OK");
                     return false; // Regresa false si el inicio de sesión no fue exitoso
                 }
         }
