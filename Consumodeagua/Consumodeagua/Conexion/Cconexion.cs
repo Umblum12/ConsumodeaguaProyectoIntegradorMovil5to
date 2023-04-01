@@ -13,13 +13,11 @@ namespace Consumodeagua.Conexion
 
         //Conexion a API Json
         private HttpClient _httpClient;
-        private HttpClient httpClient;
         private string apiBaseUrl;
         public Cconexion()
         {
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri("https://consumodeaguapi-default-rtdb.firebaseio.com/");
-            httpClient.BaseAddress = new Uri("https://identitytoolkit.googleapis.com/");
             apiBaseUrl = "https://consumodeaguapi-default-rtdb.firebaseio.com/";
         }
         public async Task<string> GetAsync(string endpoint)
@@ -30,11 +28,6 @@ namespace Consumodeagua.Conexion
         public async Task<string> PostAsync(string endpoint, HttpContent content)
         {
             var response = await _httpClient.PostAsync(endpoint, content);
-            return await response.Content.ReadAsStringAsync();
-        }
-        public async Task<string> PostAsync1(string endpoint, HttpContent content)
-        {
-            var response = await httpClient.PostAsync(endpoint, content);
             return await response.Content.ReadAsStringAsync();
         }
         public async Task<string> DeleteAsync(string path, string queryString = null)

@@ -1469,23 +1469,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CD15\\.nuget\\packages\\": {},
+    "C:\\Users\\abela\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CD15\\Desktop\\ConsumodeaguaProyectoIntegradorMovil5to\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj",
+      "projectUniqueName": "C:\\Users\\abela\\Downloads\\ConsumodeaguaProyectoIntegradorMovil5to\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj",
       "projectName": "Consumodeagua",
-      "projectPath": "C:\\Users\\CD15\\Desktop\\ConsumodeaguaProyectoIntegradorMovil5to\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj",
-      "packagesPath": "C:\\Users\\CD15\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CD15\\Desktop\\ConsumodeaguaProyectoIntegradorMovil5to\\Consumodeagua\\Consumodeagua\\obj\\",
+      "projectPath": "C:\\Users\\abela\\Downloads\\ConsumodeaguaProyectoIntegradorMovil5to\\Consumodeagua\\Consumodeagua\\Consumodeagua.csproj",
+      "packagesPath": "C:\\Users\\abela\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\abela\\Downloads\\ConsumodeaguaProyectoIntegradorMovil5to\\Consumodeagua\\Consumodeagua\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\CD15\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abela\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1555,7 +1555,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

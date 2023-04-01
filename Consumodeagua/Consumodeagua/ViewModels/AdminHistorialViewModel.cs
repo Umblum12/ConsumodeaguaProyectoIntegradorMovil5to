@@ -21,14 +21,14 @@ namespace Consumodeagua.ViewModels
         #region VARIABLES
         string _Texto;
         DateTime _datefecha;
-        ObservableCollection<MHistorial> _ListaHistorial;
+        ObservableCollection<MUsuario> _ListaUsuarios;
         #endregion
         #region CONSTRUCTOR
         public AdminHistorialViewModel(INavigation navigation)
         {
             Navigation = navigation;
             Title = "Historial";
-            MostrarHistorial();
+            MostrarLosUsuarios();
         }
         #endregion
         #region OBJETOS
@@ -42,12 +42,12 @@ namespace Consumodeagua.ViewModels
             get { return _datefecha; }
             set { SetValue(ref _datefecha, value); }
         }
-        public ObservableCollection<MHistorial> ListaHistorial
+        public ObservableCollection<MUsuario> ListaUsuarios
         {
-            get { return _ListaHistorial; }
+            get { return _ListaUsuarios; }
             set
             {
-                SetValue(ref _ListaHistorial, value);
+                SetValue(ref _ListaUsuarios, value);
                 OnpropertyChanged();
             }
         }
@@ -63,10 +63,10 @@ namespace Consumodeagua.ViewModels
             parametros.Estado = true;
             await funcion.InsertarRegHistorial(parametros);
         }
-        public async Task MostrarHistorial()
+        public async Task MostrarLosUsuarios()
         {
-            var funcion = new DHistorial();
-            ListaHistorial = await funcion.MostrarRegHistorial();
+            var funcion = new DUsuario();
+            ListaUsuarios = await funcion.MostrarRegUsuarios();
         }
         public async Task EliminarRegHisto()
         {

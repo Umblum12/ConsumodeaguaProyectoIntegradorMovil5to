@@ -69,5 +69,20 @@ namespace Consumodeagua.Services
                 return null; // Si no hay usuario logueado, regresa null
             }
         }
+        public async Task<User> RegisterAsync(string email, string password)
+        {
+            try
+            {
+                var authResult = await FirebaseAuthInstance.CreateUserWithEmailAndPasswordAsync(email, password);
+                var user = authResult.User;
+                return user;
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción
+                return null;
+            }
+        }
+
     }
 }

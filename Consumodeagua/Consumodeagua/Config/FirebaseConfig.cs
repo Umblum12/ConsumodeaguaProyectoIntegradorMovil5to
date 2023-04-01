@@ -5,8 +5,8 @@ namespace Consumodeagua.Config
 {
     public static class FirebaseConfig
     {
-        public static string ApiKey = "AIzaSyAtKvrBOrIfasAvix3UxYta7CiMlvTDJWg";
-        public static string AuthDomain = "consumodeagua-7debb.firebaseapp.com";
+        public static string ApiKey = "AIzaSyD8d76S07BjkoyJFErIqojRGQ5gGJUQeI4";
+        public static string AuthDomain = "consumodeaguapi.firebaseapp.com";
         public static FirebaseAuthProvider[] Providers = new FirebaseAuthProvider[]
         {
             new EmailProvider()

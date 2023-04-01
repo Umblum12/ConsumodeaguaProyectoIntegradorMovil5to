@@ -5,6 +5,7 @@ using Consumodeagua.VistaModelo;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
@@ -80,20 +81,49 @@ namespace Consumodeagua.ViewModels
         #region PROCESOS
         public async Task InsertarUsu()
         {
-           
+
             var funcion = new DUsuario();
-            var parametros = new MUser();
-            if (TxtNombre == null || TxtContrasena == null)
+            var parametros = new MUsuario();
+            if (TxtNombre == null || TxtApellidoPaterno == null || TxtApellidoPaterno == "" || TxtApellidoMaterno == null || TxtApellidoMaterno == "" || TxtDireccion == null || TxtDireccion == "" || TxtCorreoElectronico == null || TxtCorreoElectronico == "" || DatFechaNacimiento == null || TxtContrasena == null || TxtContrasena == "")
             {
-                await DisplayAlert("Registro Fallido", "El usuario se no se pudo registrar, no deje los campos vacios", "Continuar");
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡No se puede dejar los campos vacios!", "Continuar");
+            }
+            else if (!Regex.IsMatch(TxtNombre, @"^[a-zA-Z]+$") || TxtNombre.Length <= 3)
+            {
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡No se puede dejar los campos vacios!", "Continuar");
+            }
+            else if (!Regex.IsMatch(TxtApellidoPaterno, @"^[a-zA-Z]+$") || TxtApellidoPaterno.Length <= 3)
+            {
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡El apellido paterno no puede contener digitos y su longitud tiene que ser mayor de 3 caracteres!", "Continuar");
+            }
+            else if (!Regex.IsMatch(TxtApellidoMaterno, @"^[a-zA-Z]+$") || TxtApellidoMaterno.Length <= 3)
+            {
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡El apellido materno no puede contener digitos y su longitud tiene que ser mayor de 3 caracteres!", "Continuar");
+            }
+            else if (!Regex.IsMatch(TxtDireccion, @"^[a-zA-Z]+$") || TxtDireccion.Length <= 3)
+            {
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡La dirrección no puede contener digitos y su longitud tiene que ser mayor de 3 caracteres!", "Continuar");
+            }
+            else if (!Regex.IsMatch(TxtCorreoElectronico, @"^(?("")("".+?""@)|(([0-9a-zA-Z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-zA-Z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,6}))$") || TxtCorreoElectronico.Length <= 3)
+            {
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡Ingrese un correo electronico valido!", "Continuar");
+            }
+            else if (TxtContrasena != TxtConfirmarContrasena)
+            {
+                await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, !Las contraseñas no coinciden¡", "Continuar");
             }
             else
             {
-                parametros.email = TxtNombre;
-                parametros.password = _TxtContrasena;
-                parametros.returnSecureToken = true;
+                parametros.Nombre = TxtNombre;
+                parametros.ApellidoPaterno = TxtApellidoPaterno;
+                parametros.ApellidoMaterno = TxtApellidoMaterno;
+                parametros.Direccion = TxtDireccion;
+                parametros.CorreoElectronico = TxtCorreoElectronico;
+                parametros.FechaNacimiento = DatFechaNacimiento;
+                parametros.Contrasena = TxtContrasena;
+                parametros.rol = "habitante";
 
-                await funcion.InsertarRegHistorial(parametros);
+                await funcion.InsertarRegUsuario(parametros);
                 await DisplayAlert("Registro Exitoso", "El usuario se registro exitosamente", "Continuar");
                 await OnVolverLoginClicked();
             }

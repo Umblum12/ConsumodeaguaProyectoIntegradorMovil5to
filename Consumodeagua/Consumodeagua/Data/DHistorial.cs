@@ -15,29 +15,6 @@ namespace Consumodeagua.Data
 {
     public class DHistorial
     {
-        public async Task InsertarHistorial(MHistorial parametros)
-        {
-            await Cconexion.firebase
-                .Child("Historial")
-                .PostAsync(new MHistorial()
-                {
-                    Nombre = parametros.Nombre,
-                    Fecha = parametros.Fecha,
-                    Flujo = parametros.Flujo,
-                    Estado = parametros.Estado
-                });
-        }
-
-        public async Task<ObservableCollection<MHistorial>> MostrarHistoriale()
-        {
-            var data = await Task.Run(() => Cconexion.firebase
-                .Child("Historial")
-                .AsObservable<MHistorial>()
-                .AsObservableCollection());
-            return data;
-        }
-
-
         //Peticiones a la API Json
         Cconexion conexion = new Cconexion();
         // Para realizar una solicitud GET
@@ -53,7 +30,6 @@ namespace Consumodeagua.Data
                 items.Add(item);
             }
             return items;
-
         }
         // Para realizar una solicitud POST
         public async Task InsertarRegHistorial(MHistorial parametros)

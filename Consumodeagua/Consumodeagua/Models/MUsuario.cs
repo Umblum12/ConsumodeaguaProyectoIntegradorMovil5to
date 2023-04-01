@@ -13,5 +13,7 @@ namespace Consumodeagua.Models
         public string CorreoElectronico { get; set; }
         public DateTime? FechaNacimiento { get; set; }
         public string Contrasena { get; set; }
+        public string rol { get; set; }
+        public string UID { get; set; }
     }
 }
