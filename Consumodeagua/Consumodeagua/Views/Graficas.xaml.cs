@@ -17,7 +17,19 @@ namespace Consumodeagua.Views
         public Graficas()
         {
             InitializeComponent();
-            //webView.Source = "https://upload.wikimedia.org/wikipedia/es/timeline/6zswa00f78sek0xned6xv13ie6tq40i.png";
+            webViewPage.Source = " https://graficasflujoyvalvula.web.app";
+        }
+
+        private void webViewPage_Navigated(object sender, WebNavigatedEventArgs e)
+        {
+            activity.IsVisible = false;
+            activity.IsRunning = false;
+        }
+
+        private void webViewPage_Navigating(object sender, WebNavigatingEventArgs e)
+        {
+            activity.IsVisible = true;
+            activity.IsRunning = true;
         }
     }
 }

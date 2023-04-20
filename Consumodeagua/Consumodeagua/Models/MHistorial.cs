@@ -6,9 +6,6 @@ namespace Consumodeagua.Models
 {
     public class MHistorial
     {
-        public String Nombre { get; set; }
-        public DateTime? Fecha { get; set; }
-        public int Flujo { get; set; }
-        public bool Estado { get; set; }
+        public Dictionary<string, MHistorialUA> HistorialUA { get; set; }
     }
 }

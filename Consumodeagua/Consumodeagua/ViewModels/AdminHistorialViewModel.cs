@@ -10,6 +10,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Consumodeagua.VistaModelo;
+using Firebase.Auth;
+using System.Linq;
+using Consumodeagua.Services;
+using Rg.Plugins.Popup.Services;
 
 namespace Consumodeagua.ViewModels
 {
@@ -56,7 +60,7 @@ namespace Consumodeagua.ViewModels
         public async Task InsertarRegHisto()
         {
             var funcion = new DHistorial();
-            var parametros = new MHistorial();
+            var parametros = new MHistorialUA();
             parametros.Nombre = "Abelardo";
             parametros.Fecha = datefecha;
             parametros.Flujo = 399;
@@ -68,16 +72,23 @@ namespace Consumodeagua.ViewModels
             var funcion = new DUsuario();
             ListaUsuarios = await funcion.MostrarRegUsuarios();
         }
-        public async Task EliminarRegHisto()
+        public async Task EliminarRegHisto(string userId)
         {
+            var funcion = new DUsuario();
             bool respuesta = await DisplayAlert("Confirmación", "¿Estás seguro de que deseas continuar?", "Acceptar", "Cancelar");
 
             if (respuesta)
             {
-                // El usuario seleccionó "Sí"
-                var funcion = new DHistorial();
-                var key = "NQwxjxP4DXL4uto70hk"; // la clave del registro que desea eliminar
-                var result = await funcion.DeleteRegHistorial(key);
+                var userToDelete = ListaUsuarios.FirstOrDefault(n => n.UID == userId);
+                if (userToDelete != null)
+                {
+                    // Aquí va el código para eliminar el usuario usando Firebase
+                    bool deleted = await funcion.EliminarRegUsuario(userToDelete.UID);
+                    if (deleted)
+                    {
+                        ListaUsuarios.Remove(userToDelete);
+                    }
+                }
                 await DisplayAlert("Acceptado", "Registro eliminado", "Ok");
             }
             else
@@ -86,7 +97,11 @@ namespace Consumodeagua.ViewModels
                 await DisplayAlert("Cancelado", "Registro no eliminado", "Ok");
             }
         }
-        private async Task OnPerfilClicked()
+        public async Task EditarRegHisto(string userId)
+        {
+            await PopupNavigation.Instance.PushAsync(new PopupEditar());
+        }
+            private async Task OnPerfilClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(Perfil)}");
@@ -95,7 +110,8 @@ namespace Consumodeagua.ViewModels
         #region COMANDOS
         public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
         public ICommand InsertarRegHistocomand => new Command(async () => await InsertarRegHisto());
-        public ICommand EliminarRegHistocomand => new Command(async () => await EliminarRegHisto());
+        public ICommand EliminarRegHistocomand => new Command<string>(async (userId) => await EliminarRegHisto(userId));
+        public ICommand EditarRegHistocomand => new Command<string>(async (userId) => await EditarRegHisto(userId));
         #endregion
 
     }

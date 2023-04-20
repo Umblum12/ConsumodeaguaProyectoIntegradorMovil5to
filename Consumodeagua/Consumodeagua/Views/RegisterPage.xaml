@@ -8,15 +8,12 @@
              BackgroundColor="#183592"
              Shell.TabBarIsVisible="False"
              >
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#1181e3</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-
     <StackLayout>
-
         <StackLayout Orientation="Horizontal" Padding="20">
             <Image Source="Icono_Flecha_Atras.png" WidthRequest="50">
                 <Image.GestureRecognizers>
@@ -24,7 +21,6 @@
                 </Image.GestureRecognizers>
             </Image>
         </StackLayout>
-
         <Grid>
             <StackLayout Margin="-10,-30,0,0">
                 <Image Grid.Row="0"  Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="150" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
@@ -43,7 +39,6 @@
                 <Entry Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Placeholder="Confimar Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True" TextTransform="Lowercase" Text="{Binding TxtConfirmarContrasena}" ></Entry>
             </Grid>
         </StackLayout>
-
         <StackLayout Margin="0,30,0,30">
             <Grid>
                 <Label Grid.Row="0" Grid.Column="3" TextColor="Black"></Label>
@@ -51,5 +46,4 @@
             </Grid>
         </StackLayout>
     </StackLayout>
-
 </ContentPage>

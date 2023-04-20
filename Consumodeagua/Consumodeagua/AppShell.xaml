@@ -114,6 +114,7 @@
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
         <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}" />
+        <ShellContent Route="RecuperarContrasena" ContentTemplate="{DataTemplate local:RecuperarContrasena}" />
     </TabBar>
     <!-- 
         When the Flyout is visible this defines the content to display in the flyout.
@@ -129,7 +130,7 @@
     <FlyoutItem Title="Historial" Icon="Icono_Historial_Menu.png">
         <ShellContent Route="UsuarioHistorial" ContentTemplate="{DataTemplate local:UsuarioHistorial}" />
     </FlyoutItem>
-    <FlyoutItem Title="AdminHistorial" Icon="Icono_Historial_Menu.png">
+    <FlyoutItem Title="AdminHistorial" x:Name="adminhistorial" Icon="Icono_Historial_Menu.png">
         <ShellContent Route="AdminHistorial" ContentTemplate="{DataTemplate local:AdminHistorial}" />
     </FlyoutItem>
     <FlyoutItem Title="Manual" Icon="Icono_Manual_Menu.png">

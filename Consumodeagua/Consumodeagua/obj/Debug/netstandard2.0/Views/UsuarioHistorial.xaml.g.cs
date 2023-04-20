@@ -17,12 +17,12 @@ namespace Consumodeagua.Views {
     public partial class UsuarioHistorial : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.CollectionView _ListaHistorial;
+        private global::Xamarin.Forms.CollectionView _ListaHistoriales;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UsuarioHistorial));
-            _ListaHistorial = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CollectionView>(this, "_ListaHistorial");
+            _ListaHistoriales = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CollectionView>(this, "_ListaHistoriales");
         }
     }
 }

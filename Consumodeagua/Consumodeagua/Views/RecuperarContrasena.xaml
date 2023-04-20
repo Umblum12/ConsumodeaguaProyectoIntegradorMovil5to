@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Consumodeagua.Views.RecuperarContrasena"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#183592"
+             Shell.TabBarIsVisible="False"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#1181e3</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="20">
+            <Image Source="Icono_Flecha_Atras.png" WidthRequest="50">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding VolverLoginCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+        <Grid>
+            <StackLayout Margin="-10,-30,0,0">
+                <Image Grid.Row="0"  Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="150" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Grid>
+        <Label Text="Recuperacion de Contraseña" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="24"></Label>
+        <StackLayout Margin="0,30,0,30">
+            <Grid>
+                <Entry Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Placeholder="Ingrsa tu Email" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" TextTransform="Lowercase" Text="{Binding Email}" ></Entry>
+                <Label Grid.Row="1" Grid.Column="4" TextColor="Black"></Label>
+                <Button Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="3" CornerRadius="40"  Text="Recuperar contraseña" FontAttributes="Bold"  TextColor="Black" BackgroundColor="#1181e3" Command="{Binding ResetPasswordCommand}"></Button>
+            </Grid>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

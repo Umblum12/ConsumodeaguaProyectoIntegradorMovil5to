@@ -19,7 +19,6 @@ namespace Consumodeagua.ViewModels
         {
             
         }
-
         #region VARIABLES
         string _TxtNombre;
         string _TxtApellidoPaterno;
@@ -84,7 +83,7 @@ namespace Consumodeagua.ViewModels
 
             var funcion = new DUsuario();
             var parametros = new MUsuario();
-            if (TxtNombre == null || TxtApellidoPaterno == null || TxtApellidoPaterno == "" || TxtApellidoMaterno == null || TxtApellidoMaterno == "" || TxtDireccion == null || TxtDireccion == "" || TxtCorreoElectronico == null || TxtCorreoElectronico == "" || DatFechaNacimiento == null || TxtContrasena == null || TxtContrasena == "")
+            if (string.IsNullOrEmpty(TxtNombre) || string.IsNullOrEmpty(TxtApellidoPaterno) || string.IsNullOrEmpty(TxtApellidoMaterno) || string.IsNullOrEmpty(TxtDireccion) || string.IsNullOrEmpty(TxtCorreoElectronico) ||DatFechaNacimiento == null || string.IsNullOrEmpty(TxtContrasena) || string.IsNullOrEmpty(TxtConfirmarContrasena))
             {
                 await DisplayAlert("Error registro fallido", "El usuario se no se pudo registrar, ¡No se puede dejar los campos vacios!", "Continuar");
             }
@@ -138,6 +137,5 @@ namespace Consumodeagua.ViewModels
         public ICommand VolverLoginCommand => new Command(async () => await OnVolverLoginClicked());
         public ICommand InsertarUsuCommand => new Command(async () => await InsertarUsu());
         #endregion
-
     }
 }

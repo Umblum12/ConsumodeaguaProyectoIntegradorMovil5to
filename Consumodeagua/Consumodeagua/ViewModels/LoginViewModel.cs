@@ -15,7 +15,6 @@ namespace Consumodeagua.ViewModels
         public LoginViewModel()
         {
         }
-
         #region VARIABLES
         string _Texto;
         string _Nombre;
@@ -50,14 +49,14 @@ namespace Consumodeagua.ViewModels
         {
             var InstanciaLoginAuth = new UserService();
             var LoginAuth = await InstanciaLoginAuth.LoginAsync(Nombre, Contrasena);
-            if (Nombre == null || Nombre == "" || Contrasena == null || Contrasena == "" )
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Contrasena) )
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "No se puede dejar Usuario o contraseña vacios", "OK");
             }
             else if (LoginAuth)
             {
-                await Shell.Current.GoToAsync($"//{nameof(UsuarioPrincipal_SensordeFlujo)}");
-                var currentUser = await InstanciaLoginAuth.GetCurrentUserAsync(); // Obtiene el usuario actual
+                var currentUser = await InstanciaLoginAuth.GetCurrentUserAsync();
+                await Shell.Current.GoToAsync($"//{nameof(UsuarioPrincipal_SensordeFlujo)}?name={currentUser.Info.DisplayName}?uid={currentUser.Info.Uid}");
                 await Application.Current.MainPage.DisplayAlert("Bienvenido", $"¡Hola {currentUser.Info.DisplayName}!", "OK");
             }
             else
@@ -65,17 +64,21 @@ namespace Consumodeagua.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", "Usuario o contraseña Incorrectos", "OK");
             }
         }
-
         private async Task OnRegisterClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(RegisterPage)}");
         }
+        private async Task OnCambiarContrasenaClicked()
+        {
+            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+            await Shell.Current.GoToAsync($"//{nameof(RecuperarContrasena)}");
+        }
         #endregion
         #region COMANDOS
         public ICommand LoginCommand => new Command(async () => await OnLoginClicked());
         public ICommand RegisterCommand => new Command(async () => await OnRegisterClicked());
+        public ICommand CambiarContrasenaCommand => new Command(async () => await OnCambiarContrasenaClicked());
         #endregion
-
     }
 }

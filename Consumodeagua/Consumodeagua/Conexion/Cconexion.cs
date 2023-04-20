@@ -37,6 +37,11 @@ namespace Consumodeagua.Conexion
             var content = await response.Content.ReadAsStringAsync();
             return content;
         }
+        public async Task<string> PutAsync(string endpoint, HttpContent content)
+        {
+            var response = await _httpClient.PutAsync(endpoint, content);
+            return await response.Content.ReadAsStringAsync();
+        }
         private Uri BuildUri(string path, string queryString)
         {
             var builder = new UriBuilder(apiBaseUrl);
@@ -44,6 +49,5 @@ namespace Consumodeagua.Conexion
             builder.Query = queryString;
             return builder.Uri;
         }
-
     }
 }

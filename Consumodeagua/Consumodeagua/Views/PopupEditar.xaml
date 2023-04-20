@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage
+   xmlns="http://xamarin.com/schemas/2014/forms"
+   xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   x:Class="Consumodeagua.Views.PopupEditar">
+    <StackLayout 
+        HorizontalOptions="Center" 
+        VerticalOptions="Center"
+        Margin="30,30,30,30"
+        >
+        <StackLayout >
+            <Button 
+                Text="X" 
+                TextColor="White" 
+                BackgroundColor="Red" 
+                Clicked="Cerrar_popup" 
+                HorizontalOptions="EndAndExpand" 
+                VerticalOptions="EndAndExpand" 
+                CornerRadius="20"></Button>
+        </StackLayout>
+        <Frame 
+            BackgroundColor="#1181e3" 
+            Padding="30,90,30,80" 
+            CornerRadius="30">
+            <StackLayout >
+                <Label  
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    Margin="0,-45,0,0" 
+                    Text="Editar Usuario" 
+                    FontAttributes="Bold" 
+                    TextColor="Black" 
+                    FontSize="Title"></Label>
+                <Grid>
+                    <Label Grid.Row="1" 
+                           Grid.Column="0" 
+                           Text="Nombre :"
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="CenterAndExpand"
+                           FontAttributes="Bold" 
+                           TextColor="Black" 
+                           FontSize="Body"
+                           />
+                    <Entry x:Name="nombre" Grid.Row="1" Grid.Column="1"></Entry>
+                    <Label 
+                        Grid.Row="4" 
+                        Grid.Column="0" 
+                        Text="Correo Electrónico :"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontAttributes="Bold" 
+                        TextColor="Black" 
+                        FontSize="Body"
+                        />
+                    <Entry x:Name="Correo" Grid.Row="4" Grid.Column="1"></Entry>
+                    <Label 
+                        Grid.Row="6" 
+                        Grid.Column="0" 
+                        Text="rol :"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontAttributes="Bold" 
+                        TextColor="Black" 
+                        FontSize="Body"
+                        />
+                    <Entry x:Name="rolusu" Grid.Row="6" Grid.Column="1"></Entry>
+                    <Button  
+                    Grid.Row="9" 
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Text="Editar" 
+                    BackgroundColor="#E7F94B" 
+                    TextColor="Black" 
+                    FontAttributes="Bold" 
+                    FontSize="15" 
+                    CornerRadius="20"
+                    ></Button>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</popup:PopupPage>

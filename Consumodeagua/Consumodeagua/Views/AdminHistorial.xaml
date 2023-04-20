@@ -8,73 +8,185 @@
              >
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Accent">#1181e3</Color>
+            <Color 
+                x:Key="Accent"
+                >
+                #1181e3
+            </Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid RowDefinitions="180,*" BackgroundColor="#183592">
-        <StackLayout Margin="0,10,0,0">
-            <Image Margin="-210,0,10,0" Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="80" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
-            <Image Margin="10,-80,-80,0" Grid.Column="3"  Source="https://i.ibb.co/LzTYFcC/16363.png"  HeightRequest="55" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
-            <StackLayout Margin="0,-59,20,50">
-                <Button CornerRadius="20" Text="Eduardo" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
+    <Grid 
+        RowDefinitions="180,*" 
+        BackgroundColor="#183592"
+        >
+        <StackLayout 
+            Margin="0,10,0,0"
+            >
+            <Image 
+                Margin="-210,0,10,0" 
+                Source="https://i.ibb.co/JvZS3t5/oomapas.png" 
+                HeightRequest="80" 
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"
+                />
+            <Image 
+                Margin="10,-80,-80,0" 
+                Grid.Column="3" 
+                Source="https://i.ibb.co/LzTYFcC/16363.png" 
+                HeightRequest="55" 
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"
+                />
+            <StackLayout 
+                Margin="0,-59,20,50"
+                >
+                <Button 
+                    CornerRadius="20" 
+                    Text="Eduardo" 
+                    HorizontalOptions="EndAndExpand" 
+                    VerticalOptions="EndAndExpand" 
+                    BackgroundColor="#1181e3" 
+                    FontAttributes="Bold" 
+                    FontSize="15" 
+                    Command="{Binding Perfilcomand}"
+                    ></Button>
             </StackLayout>
-            <Button WidthRequest="400" HeightRequest="40" Margin="0,0,0,0" CornerRadius="20" Text="Insertar registro" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding InsertarRegHistocomand}"></Button>
+            <Button 
+                WidthRequest="400" 
+                HeightRequest="40" 
+                Margin="0,0,0,0" 
+                CornerRadius="20" 
+                Text="Insertar registro" 
+                HorizontalOptions="StartAndExpand" 
+                VerticalOptions="StartAndExpand" 
+                BackgroundColor="#1181e3" 
+                FontAttributes="Bold" 
+                FontSize="15" 
+                Command="{Binding InsertarRegHistocomand}"
+                ></Button>
         </StackLayout>
-        <CollectionView BackgroundColor="#1181e3"
+        <CollectionView 
+                        BackgroundColor="#1181e3"
                         Grid.Row="1"
                         ItemsSource="{Binding ListaUsuarios}"
                         x:Name="_ListaUsuarios"
                         Margin="0,40,0,0"
                         >
             <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="10" />
+                <GridItemsLayout 
+                    Orientation="Vertical" 
+                    Span="2" 
+                    HorizontalItemSpacing="10" 
+                    VerticalItemSpacing="10"
+                    />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid RowDefinitions="100, *" Margin="10,15,0,0">
-                        <Frame Grid.Row="1" WidthRequest="150" HorizontalOptions="Center" CornerRadius="15" Margin="10,-95,10,0" HasShadow="False">
-                            <SwipeView Threshold="80" Grid.Row="1" Grid.ColumnSpan="1">
+                    <Grid 
+                        RowDefinitions="100, *" 
+                        Margin="10,15,0,0"
+                        >
+                        <Frame 
+                            Grid.Row="1" 
+                            WidthRequest="150" 
+                            HorizontalOptions="Center" 
+                            CornerRadius="15" 
+                            Margin="10,-95,10,0" 
+                            HasShadow="False"
+                            >
+                            <SwipeView 
+                                Threshold="80" 
+                                Grid.Row="1" 
+                                Grid.ColumnSpan="1"
+                                >
                                 <SwipeView.RightItems>
-                                    <SwipeItemView BackgroundColor="Transparent">
-                                        <Grid RowDefinitions="Auto,*" WidthRequest="100">
+                                    <SwipeItemView 
+                                        BackgroundColor="Transparent"
+                                        >
+                                        <Grid 
+                                            RowDefinitions="Auto,*" 
+                                            WidthRequest="100"
+                                            > 
                                             <Grid.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding Source={Reference _ListaUsuarios}, Path=BindingContext.EliminarRegHistocomand}" CommandParameter="{Binding .}"/>
+                                                <TapGestureRecognizer 
+                                                    Command="{Binding Source={Reference _ListaUsuarios}, Path=BindingContext.EliminarRegHistocomand}" 
+                                                    CommandParameter="{Binding UID}"
+                                                    />
                                             </Grid.GestureRecognizers>
-                                            <BoxView CornerRadius="24" BackgroundColor="red" Grid.RowSpan="2" />
-                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Margin="18,80,0,0" HeightRequest="75" Source="Icono_Borrar.png"/>
+                                            <BoxView 
+                                                CornerRadius="24" 
+                                                BackgroundColor="red" 
+                                                Grid.RowSpan="2"
+                                                />
+                                            <Image 
+                                                VerticalOptions="Center" 
+                                                HorizontalOptions="Center" 
+                                                Margin="18,80,0,0" 
+                                                HeightRequest="75" 
+                                                Source="Icono_Borrar.png"
+                                                />
                                         </Grid>
                                     </SwipeItemView>
                                 </SwipeView.RightItems>
                                 <SwipeView.LeftItems>
-                                    <SwipeItemView BackgroundColor="Transparent">
-                                        <Grid RowDefinitions="Auto,*" WidthRequest="100">
+                                    <SwipeItemView 
+                                        BackgroundColor="Transparent"
+                                        >
+                                        <Grid 
+                                            RowDefinitions="Auto,*" 
+                                            WidthRequest="100"
+                                            >
                                             <Grid.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding EliminarRegHistocomand}"/>
+                                                <TapGestureRecognizer 
+                                                    Command="{Binding Source={Reference _ListaUsuarios}, Path=BindingContext.EditarRegHistocomand}" 
+                                                    CommandParameter="{Binding userId}"
+                                                    />
                                             </Grid.GestureRecognizers>
-                                            <BoxView CornerRadius="24" BackgroundColor="LightGoldenrodYellow" Grid.RowSpan="2" />
-                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Margin="-15,36,0,0" HeightRequest="160" Source="Icono_Editar.png"/>
+                                            <BoxView 
+                                                CornerRadius="24" 
+                                                BackgroundColor="#E7F94B" 
+                                                Grid.RowSpan="2"
+                                                />
+                                            <Image 
+                                                VerticalOptions="Center" 
+                                                HorizontalOptions="Center" 
+                                                Margin="-15,36,0,0" 
+                                                HeightRequest="160" 
+                                                Source="Icono_Editar.png"
+                                                />
                                         </Grid>
                                     </SwipeItemView>
                                 </SwipeView.LeftItems>
-                                <StackLayout Margin="0,10,0,0">
-                                    <Label Text="Nombre: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Nombre}"  FontSize="15"/>
-                                    <Label Text="Apellido Paterno: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding ApellidoPaterno}" FontSize="15"/>
-                                    <Label Text="Apellido Materno: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding ApellidoMaterno}" CharacterSpacing="1" FontSize="20" />
-                                    <Label Text="Dirección: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Direccion}" FontSize="15"/>
-                                    <Label Text="Correo Electronico: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding CorreoElectronico}" FontSize="15"/>
-                                    <Label Text="Fecha de Nacimiento: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding FechaNacimiento}" FontSize="15"/>
-                                    <Label Text="Contraseña: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Contrasena}" FontSize="15"/>
-                                    <Label Text="Rol: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding rol}" FontSize="15"/>
-                                    <Label Text="UID: " FontSize="15" FontAttributes="Bold"/>
-                                    <Label Text="{Binding UID}" FontSize="15"/>
+                                <StackLayout 
+                                    Margin="0,10,0,0"
+                                    >
+                                    <Label 
+                                        Text="Nombre: " 
+                                        FontSize="15" 
+                                        FontAttributes="Bold"
+                                        />
+                                    <Label 
+                                        Text="{Binding Nombre}"  
+                                        FontSize="15"
+                                        />
+                                    <Label 
+                                        Text="Correo Electronico: " 
+                                        FontSize="15" 
+                                        FontAttributes="Bold"
+                                        />
+                                    <Label 
+                                        Text="{Binding CorreoElectronico}" 
+                                        FontSize="15"
+                                        />
+                                    <Label 
+                                        Text="Rol: " 
+                                        FontSize="15" 
+                                        FontAttributes="Bold"
+                                        />
+                                    <Label 
+                                        Text="{Binding rol}" 
+                                        FontSize="15"
+                                        />
                                 </StackLayout>
                             </SwipeView>
                         </Frame>

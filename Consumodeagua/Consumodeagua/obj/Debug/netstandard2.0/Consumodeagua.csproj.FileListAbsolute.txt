@@ -123,3 +123,5 @@ C:\Users\abela\Downloads\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\C
 C:\Users\abela\Downloads\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\refint\Consumodeagua.dll
 C:\Users\abela\Downloads\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Consumodeagua.pdb
 C:\Users\abela\Downloads\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\ref\Consumodeagua.dll
+C:\Users\abela\Downloads\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\PopupEditar.xaml.g.cs
+C:\Users\abela\Downloads\ConsumodeaguaProyectoIntegradorMovil5to\Consumodeagua\Consumodeagua\obj\Debug\netstandard2.0\Views\RecuperarContrasena.xaml.g.cs

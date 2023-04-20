@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using Consumodeagua.VistaModelo;
+using Consumodeagua.Services;
 
 namespace Consumodeagua.ViewModels
 {
@@ -22,14 +23,14 @@ namespace Consumodeagua.ViewModels
         #region VARIABLES
         string _Texto;
         DateTime _datefecha;
-        ObservableCollection<MHistorial> _ListaHistorial;
+        ObservableCollection<MHistorialUA> _ListaHistoriales;
         #endregion
         #region CONSTRUCTOR
         public UsuarioHistorialViewModel(INavigation navigation)
         {
             Navigation = navigation;
             Title = "Historial";
-            MostrarHistorial();
+            MostrarHistorialUsuarioActualUid();
         }
         #endregion
         #region OBJETOS
@@ -43,12 +44,12 @@ namespace Consumodeagua.ViewModels
             get { return _datefecha; }
             set { SetValue(ref _datefecha, value); }
         }
-        public ObservableCollection<MHistorial> ListaHistorial
+        public ObservableCollection<MHistorialUA> ListaHistoriales
         {
-            get { return _ListaHistorial; }
+            get { return _ListaHistoriales; }
             set
             {
-                SetValue(ref _ListaHistorial, value);
+                SetValue(ref _ListaHistoriales, value);
                 OnpropertyChanged();
             }
         }
@@ -57,17 +58,19 @@ namespace Consumodeagua.ViewModels
         public async Task InsertarRegHisto()
         {
             var funcion = new DHistorial();
-            var parametros = new MHistorial();
+            var parametros = new MHistorialUA();
             parametros.Nombre = "Abelardo";
             parametros.Fecha = datefecha;
             parametros.Flujo = 399;
             parametros.Estado = true;
+            parametros.id = 6;
+            parametros.uid = "M0SkZDEVnGT67uYLxWw56w8HXp13";
             await funcion.InsertarRegHistorial(parametros);
         }
-        public async Task MostrarHistorial()
+        public async Task MostrarHistorialUsuarioActualUid()
         {
             var funcion = new DHistorial();
-            ListaHistorial = await funcion.MostrarRegHistorial();
+            ListaHistoriales = await funcion.ObtenerHistorial();
         }
         private async Task OnPerfilClicked()
         {

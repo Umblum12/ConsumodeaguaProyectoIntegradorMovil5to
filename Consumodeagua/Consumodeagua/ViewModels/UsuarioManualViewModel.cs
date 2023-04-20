@@ -13,7 +13,6 @@ namespace Consumodeagua.ViewModels
         public UsuarioManualViewModel()
         {
         }
-
         #region VARIABLES
         string _Texto;
         #endregion

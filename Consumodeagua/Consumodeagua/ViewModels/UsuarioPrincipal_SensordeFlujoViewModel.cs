@@ -1,7 +1,11 @@
-﻿using Consumodeagua.Views;
+﻿using Consumodeagua.Data;
+using Consumodeagua.Models;
+using Consumodeagua.Services;
+using Consumodeagua.Views;
 using Consumodeagua.VistaModelo;
 using System;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -12,15 +16,19 @@ namespace Consumodeagua.ViewModels
     {
         public UsuarioPrincipal_SensordeFlujoViewModel()
         {
-        }
 
+        }
         #region VARIABLES
         string _Texto;
+        string _txtNombrePerfil;
         string _LContadosTXT;
         bool _btnEnableValv;
         bool _bnt_click;
         int _N1;
         string _ImgSFA;
+        private Timer _timer;
+        private int _intervalo = 5000; // Intervalo de tiempo en milisegundos
+
         #endregion
         #region CONSTRUCTOR
         public UsuarioPrincipal_SensordeFlujoViewModel(INavigation navigation)
@@ -29,8 +37,8 @@ namespace Consumodeagua.ViewModels
             bnt_click = false;
             ImgSFA = "https://imgbb.su/images/2023/02/28/Icono_SensorAgua_Grafica_fondo8936a83e1073933c.png";
             N1 = 127;
-            LContadosTXT = "0";
             Title = "SensordeFlujo";
+            StartTimer(); // Iniciar el temporizador
         }
         #endregion
         #region OBJETOS
@@ -38,6 +46,11 @@ namespace Consumodeagua.ViewModels
         {
             get { return _Texto; }
             set { SetValue(ref _Texto, value); }
+        }
+        public string txtNombrePerfil
+        {
+            get { return _txtNombrePerfil; }
+            set { SetValue(ref _txtNombrePerfil, value); }
         }
         public string LContadosTXT
         {
@@ -66,42 +79,45 @@ namespace Consumodeagua.ViewModels
         }
         #endregion
         #region PROCESOS
-        public void SimularFlujoAgua()
+        private void StartTimer()
         {
-            if (N1 == 127)
+
+            _timer = new Timer(_intervalo);
+            _timer.Elapsed += async (sender, e) => await MostrarFlujoAgua(); // Cada vez que el temporizador se ejecuta, actualizar el valor del sensor
+            _timer.AutoReset = true;
+            _timer.Enabled = true;
+        }
+        public async Task MostrarFlujoAgua()
+        {
+            var funcion = new DSensorFlujo();
+            var flowValue = await funcion.GetFlowValueAsync();
+            LContadosTXT = flowValue.ToString();
+
+            if (flowValue <= 0)
             {
-                N1 = 254;
-                ImgSFA = "https://imgbb.su/images/2023/02/28/Icono_SensorAgua_Grafica_Verde0d0c4b0d569ebd4e.png";
-                LContadosTXT = "127";
+                ImgSFA = "https://i.ibb.co/6PbSb8p/Icono-Sensor-Agua-Grafica-fondo.png";
             }
-            else if (N1 == 254)
+            else if (flowValue >= 0.1 && flowValue <= 0.9)
             {
-                N1 = 381;
-                ImgSFA = "https://imgbb.su/images/2023/02/28/Icono_SensorAgua_Grafica_Naranja3f5f06680bbf003a.png";
-                LContadosTXT = "254";
+                ImgSFA = "https://i.ibb.co/cQSGS84/Icono-Sensor-Agua-Grafica-Verde.png";
             }
-            else if (N1 == 381)
+            else if (flowValue >= 1 && flowValue <= 1.9)
             {
-                N1 = 0;
-                ImgSFA = "https://imgbb.su/images/2023/02/28/Icono_SensorAgua_Grafica_Rojo539dc19d96028df7.png";
-                DisplayAlert("Cuidado", "El flujo esta en 381", "Ok");
-                LContadosTXT = "381";
+                ImgSFA = "https://i.ibb.co/RbKF2G1/Icono-Sensor-Agua-Grafica-Naranja.png";
             }
-            else if (N1 == 0)
+            else 
             {
-                N1 = 127;
-                ImgSFA = "https://imgbb.su/images/2023/02/28/Icono_SensorAgua_Grafica_fondo8936a83e1073933c.png";
-                LContadosTXT = "0";
+                ImgSFA = "https://i.ibb.co/GsSQ3Vb/Icono-Sensor-Agua-Grafica-Rojo.png";
+                await DisplayAlert("Cuidado", "El flujo esta en 2 o superor", "Ok");
             }
         }
-        private async Task OnPerfilClicked()
+        public async Task OnPerfilClicked()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(Perfil)}");
         }
         #endregion
         #region COMANDOS
-        public ICommand SimularFlujoAguacomand => new Command(SimularFlujoAgua);
         public ICommand Perfilcomand => new Command(async () => await OnPerfilClicked());
         #endregion
     }

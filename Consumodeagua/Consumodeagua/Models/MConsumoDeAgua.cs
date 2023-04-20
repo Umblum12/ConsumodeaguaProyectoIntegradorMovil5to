@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Consumodeagua.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Consumodeagua.Models
 {
-    internal class MConsumoDeAgua
-    {
-        public Dictionary<string, MHistorial> Historial { get; set; }
+    public class MConsumoDeAgua { 
+         public Dictionary<string, MHistorialUA> Historial1 { get; set; }
+    
         public Dictionary<string, MUsuario> Usuarios { get; set; }
     }
 }

@@ -8,6 +8,7 @@
              BackgroundColor="#183592"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
              >
     <ContentPage.Content>
         <StackLayout>
@@ -24,21 +25,34 @@
                         <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Usuario" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" Text="{Binding Nombre}"></Entry>
                         <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="Contraseña" FontFamily="Lobster-Regular" FontAttributes="Bold" PlaceholderColor="White" TextColor="White" IsPassword="True" Text="{Binding Contrasena}"></Entry>
                         <Label Grid.Row="0" Grid.Column="3" TextColor="Black" ></Label>
-                        <Button Margin="0,-30,0,30" Grid.Row="5" Grid.Column="1" HeightRequest="51" Grid.ColumnSpan="2" CornerRadius="40"  Text="INICIAR SESIÓN" FontAttributes="Bold" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding LoginCommand}"></Button> 
+                        <Button Margin="0,-30,0,30" Grid.Row="5" Grid.Column="1" HeightRequest="90" Grid.ColumnSpan="2" CornerRadius="40"  Text="INICIAR SESIÓN" FontAttributes="Bold" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding LoginCommand}"></Button> 
                     </Grid>
                 </StackLayout>
 
                 <StackLayout>
                     <Grid>
-                        <Label Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4" Text="¿Aún no tienes una cuenta?" FontAttributes="Bold" TextColor="White" FontSize="18" VerticalOptions="Start" HorizontalOptions="Start" ></Label>
-                        <Label Grid.Row="6" Grid.Column="4" TextColor="Black"></Label>
+                        <Label Grid.Row="7" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4" Text="¿Olvidaste tu contraseña?" FontAttributes="Bold" TextColor="White" FontSize="18" VerticalOptions="Start" HorizontalOptions="Start" ></Label>
+                        <Label Grid.Row="0" Grid.Column="4" TextColor="Black"></Label>
                     </Grid>
                 </StackLayout>
                 <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="5" Color="White"/>
-                <StackLayout Margin="0,30,0,30">
+                <StackLayout Margin="0,0,0,10">
                     <Grid>
                         <Label Grid.Row="0" Grid.Column="3" TextColor="Black"></Label>
-                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="REGISTRARSE" FontAttributes="Bold" CornerRadius="40" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding RegisterCommand}"></Button>
+                        <Button Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="2" Text="RECUPERAR" FontAttributes="Bold" CornerRadius="40" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding CambiarContrasenaCommand}"></Button>
+                    </Grid>
+                </StackLayout>
+                <StackLayout>
+                    <Grid>
+                        <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="4" Text="¿Aún no tienes una cuenta?" FontAttributes="Bold" TextColor="White" FontSize="18" VerticalOptions="Start" HorizontalOptions="Start" ></Label>
+                        <Label Grid.Row="0" Grid.Column="4" TextColor="Black"></Label>
+                    </Grid>
+                </StackLayout>
+                <BoxView  HorizontalOptions="FillAndExpand" HeightRequest="5" Color="White"/>
+                <StackLayout Margin="0,0,0,30">
+                    <Grid>
+                        <Label Grid.Row="0" Grid.Column="3" TextColor="Black"></Label>
+                        <Button Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="2" Text="REGISTRARSE" FontAttributes="Bold" CornerRadius="40" TextColor="Black" BackgroundColor="#1181e3" Command="{Binding RegisterCommand}"></Button>
                     </Grid>
                 </StackLayout>
             </StackLayout>

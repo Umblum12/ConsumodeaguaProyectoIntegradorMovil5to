@@ -20,7 +20,7 @@ namespace Consumodeagua.Data
         Cconexion conexion = new Cconexion();
         //Peticiones a los servicios firebase
         UserService userservices = new UserService();
-        // Para realizar una solicitud GET
+        // Para realizar una solicitud GET para mostrar el historial del usuario actual
         public async Task<ObservableCollection<MUsuario>> MostrarRegUsuarios()
         {
             var response = await conexion.GetAsync("Consumodeagua.json");
@@ -40,11 +40,12 @@ namespace Consumodeagua.Data
             try
             {
                 // Creamos el usuario en Firebase Authentication
-                var RegisterAuth = await userservices.RegisterAsync(parametros.CorreoElectronico, parametros.Contrasena);
+                var RegisterAuth = await userservices.RegisterAsync(parametros.CorreoElectronico, parametros.Contrasena, parametros.Nombre);
                 // Aquí puedes guardar el ID del usuario generado por Firebase Authentication
                 var firebaseUserId = RegisterAuth.Uid;
-                // Creamos la entrada del usuario en la base de datos de usuarios
-                MUsuario datos = new MUsuario
+                // Creamos la entrada del usuario en la base de datos de usuarios Realtime Database
+                var datos = new Dictionary<string, dynamic>();
+                datos.Add(firebaseUserId, new
                 {
                     Nombre = parametros.Nombre,
                     ApellidoPaterno = parametros.ApellidoPaterno,
@@ -55,7 +56,7 @@ namespace Consumodeagua.Data
                     Contrasena = parametros.Contrasena,
                     rol = parametros.rol,
                     UID = firebaseUserId  // Asignamos el UID generado por Firebase Authentication
-                };
+                });
                 var json = JsonConvert.SerializeObject(datos);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await conexion.PostAsync("Consumodeagua/Usuarios.json", content);
@@ -71,6 +72,13 @@ namespace Consumodeagua.Data
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Al insertar registro de usuario:" + ex.Message, "OK");
             }
+        }
+
+        // Para realizar una solicitud Delete y registrar usuario
+        public async Task<bool> EliminarRegUsuario(string key)
+        {
+            await conexion.DeleteAsync($"Consumodeagua/Usuarios/{key}.json");
+            return true;
         }
     }
 }
