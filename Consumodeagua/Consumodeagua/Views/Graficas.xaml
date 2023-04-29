@@ -1,12 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="Consumodeagua.Views.Graficas"
-             BackgroundColor="#183592">
-    <ContentPage.Content >
-        <StackLayout BackgroundColor="#183592">
-            <ActivityIndicator x:Name="activity" Color="Blue" BackgroundColor="#183592" HorizontalOptions="Center" VerticalOptions="Center" Scale="2" IsVisible="false" Margin="50"></ActivityIndicator>
-            <WebView BackgroundColor="#183592" x:Name="webViewPage" WidthRequest="1000" HeightRequest="1000" Navigated="webViewPage_Navigated" Navigating="webViewPage_Navigating"></WebView>
+             xmlns:vm="clr-namespace:Consumodeagua.ViewModels"
+             Title="{Binding Title}"
+             BackgroundColor="#183592"
+             >
+    <ContentPage.Resources>
+    <ResourceDictionary>
+        <Color x:Key="Accent">#1181e3</Color>
+    </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout Margin="0,30,0,0">
+                <Image Margin="-210,0,10,0" Source="https://i.ibb.co/JvZS3t5/oomapas.png" HeightRequest="80" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                <Image Margin="-15,-80,-80,0" Grid.Column="3"  Source="https://i.ibb.co/LzTYFcC/16363.png"  HeightRequest="55" VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand"/>
+                <StackLayout Margin="0,-59,20,50">
+                    <Button CornerRadius="20" x:Name="perfil" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="#1181e3" FontAttributes="Bold" FontSize="15" Command="{Binding Perfilcomand}"></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout BackgroundColor="#183592" >
+                <Grid>
+                    <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Text="{Binding LContadosTXT}" TextColor="White" FontSize="Large" IsReadOnly="True"/>
+                    <microcharts:ChartView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="chartView" HeightRequest="250" Margin="50,30,50,30" />
+                </Grid>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

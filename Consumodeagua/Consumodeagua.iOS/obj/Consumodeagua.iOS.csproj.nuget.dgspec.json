@@ -138,6 +138,14 @@
               "target": "Package",
               "version": "[4.2.0, )"
             },
+            "Microcharts": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
+            "Microcharts.Forms": {
+              "target": "Package",
+              "version": "[0.9.5.9, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

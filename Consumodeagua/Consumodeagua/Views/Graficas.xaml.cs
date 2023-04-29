@@ -1,35 +1,46 @@
-﻿using Consumodeagua.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using SkiaSharp;
+using Microcharts;
+using Entry = Microcharts.ChartEntry;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microcharts.Forms;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Net.Http;
+using Consumodeagua.Data;
+using System;
+using System.Threading.Tasks;
+using Consumodeagua.ViewModels;
 
 namespace Consumodeagua.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Graficas : ContentPage
     {
-        //ItemsViewModel _viewModel;
         public Graficas()
         {
             InitializeComponent();
-            webViewPage.Source = " https://graficasflujoyvalvula.web.app";
+            BindingContext = new GraficasViewModel(Navigation);
+        }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var funcion = new DSensorFlujo();
+            var entries = new List<Entry>();
+            while (true)
+            {
+                var flow = await funcion.GetFlowValueAsync();
+                entries.Add(new Entry((float)flow)
+                {
+                    Label = DateTime.Now.ToString("hh:mm:ss"),
+                    ValueLabel = flow.ToString(),
+                    Color = SKColor.Parse("#FF0000")
+                });
+                chartView.Chart = new LineChart() { Entries = entries };
+                await Task.Delay(5000);
+            }
         }
 
-        private void webViewPage_Navigated(object sender, WebNavigatedEventArgs e)
-        {
-            activity.IsVisible = false;
-            activity.IsRunning = false;
-        }
-
-        private void webViewPage_Navigating(object sender, WebNavigatingEventArgs e)
-        {
-            activity.IsVisible = true;
-            activity.IsRunning = true;
-        }
     }
 }
